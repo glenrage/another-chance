@@ -11,6 +11,7 @@ const UserSchema = new mongoose.Schema({
   work: String,
   position: String,
   phone: Number,
+  admin: {type: Boolean, default: true },
   hash: String,
   salt: String
 }, {timestamps: true});
@@ -48,7 +49,8 @@ UserSchema.methods.toAuthJSON = function(){
     token: this.generateJWT(),
     work: this.work,
     position: this.position,
-    phone: this.phone
+    phone: this.phone,
+    admin: this.admin
   };
 };
 
