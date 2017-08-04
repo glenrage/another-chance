@@ -11,13 +11,13 @@ function getTokenFromHeader(req){
 }
 
 const auth = {
-  //required routes that require authorization
+  //required routes that require JWT access
   required: jwt({
     secret: secret,
     userProperty: 'payload',
     getToken: getTokenFromHeader
   }),
-  //requests without a token will succeed
+  //requests without a token
   optional: jwt({
     secret: secret,
     userProperty: 'payload',
