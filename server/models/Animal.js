@@ -1,0 +1,53 @@
+'use strict';
+
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
+
+const AnimalSchema = new mongoose.Schema({
+  slug: {type: String, lowercase: true, unique: true},
+  name: String,
+  type: String,
+  weight: String,
+  age: String,
+  bloodType: String,
+  contactName: String,
+  contactNumber: String,
+  vetName: String,
+  location: String,
+  photo: String
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+}, {timestamps: true});
+
+AnimalSchema.plugin(uniqueValidator, {message: 'is already taken'});
+
+//take name of animal and generate unique slug url
+AnimalSchema.methods.slugify = function() {
+  this.slug = slug(this.name) + '-' + (Math.random() * Math.pow(36, 6) | 0).toString(36);
+}
+
+//generate slug before Mongoose tries to validate model
+AnimalSchema.pre('validate', function(next) {
+  if(!this.slug) {
+    this.slugify();
+  }
+  next();
+});
+
+AnimalSchema.methods.toJSONFor = function(user) {
+  return {
+    slug: this.slug,
+    name: this.name,
+    type: this.type,
+    weight: this.weight,
+    age: this.age,
+    bloodType: this.bloodType,
+    contactName: this.contactName,
+    contactNumber: this.contactNumber,
+    vetName: this.vetName,
+    location: this.location,
+    photo: this.photo,
+    author: this.author.toProfileJSONFor(user)
+  };
+};
+
+mongoose.model('Animal', AnimalSchema);

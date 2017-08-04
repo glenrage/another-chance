@@ -3,9 +3,9 @@ Another chance is an application for animal non profit organizations to store an
 
 ### Access levels
 
-Admins - Full CRUD(create, read, update, delete) access to ALL records.
+Admins - Full CRUD (create, read, update, delete) access to ALL records and Users.
 
-Users - Veterinarians and staff will be able to search, add, and edit animal records. No delete access.
+Users - Veterinarians and staff will be able to search, create, and update animal records. No delete access. Users can also edit their own profile information.
 
 ### User account creation JSON model example
 

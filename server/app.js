@@ -9,6 +9,8 @@ const http = require('http'),
     errorhandler = require('errorhandler'),
     mongoose = require('mongoose');
 
+require('dotenv').load();
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 // Create global app object
@@ -38,8 +40,7 @@ if(isProduction){
 }
 
 require('./models/User');
-// require('./models/Article');
-
+require('./models/Animal');
 require('./config/passport');
 
 app.use(require('./routes'));

@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   firstName: {type: String, lowercase: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
   lastName: {type: String, lowercase: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
   email: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
-  work: String,
+  company: String,
   position: String,
   phone: Number,
   admin: {type: Boolean, default: true },
@@ -47,7 +47,7 @@ UserSchema.methods.toAuthJSON = function(){
     lastName: this.lastName,
     email: this.email,
     token: this.generateJWT(),
-    work: this.work,
+    company: this.company,
     position: this.position,
     phone: this.phone,
     admin: this.admin
@@ -58,7 +58,7 @@ UserSchema.methods.toProfileJSONFor = function(user){
   return {
     firstName: this.firstName,
     lastName: this.lastName,
-    work: this.work,
+    company: this.company,
     position: this.position,
     phone: this.phone
   };
