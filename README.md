@@ -105,10 +105,10 @@ npm run start
 ```
 Create-React-Scripts will launch, open your browser to http://localhost:3001
 
-##### Credits
+### Credits
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/glenrage/)
 
 Built by Glen Pham and his dog Molly
 
-http://res.cloudinary.com/glenrage/image/upload/c_scale,w_445/v1501914520/mollyboo_dptv9k.jpg
+![alt text](http://res.cloudinary.com/glenrage/image/upload/c_scale,w_445/v1501914520/mollyboo_dptv9k.jpg)
 
