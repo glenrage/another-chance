@@ -5,7 +5,7 @@
 [![dependencies Status](https://david-dm.org/expressjs/express/status.svg)](https://david-dm.org/expressjs/express)
 [![devDependencies Status](https://david-dm.org/expressjs/express/dev-status.svg)](https://david-dm.org/expressjs/express?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/glenrage/)
+
 
 
 Another chance is an application for animal non prÂofit organizations to store and manage animal blood donors.
@@ -78,7 +78,36 @@ createdBy: (this field is automatically populated by the corresponding User)
 * Redux
 * Create-React-App
 
+### Installation Instructions
+
+You need two instances of terminal open. One will run the server, the other will run the client build.
+
+```
+git clone https://github.com/glenrage/another-chance.git
+cd another-chance
+```
+###### Server setup
+After you clone, open the first terminal window and run the following
+```
+cd server
+npm i
+npm run dev
+```
+Nodemon will launch the server to http://localhost:3000
+
+###### Client setup
+
+In your other terminal window run the following commands
+```
+cd client
+npm i
+npm run start
+```
+Create-React-Scripts will launch, open your browser to http://localhost:3001
+
 ##### Credits
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/glenrage/)
+
 Built by Glen Pham and his dog Molly
 
-![alt text](http://res.cloudinary.com/glenrage/image/upload/c_scale,w_394/v1501914520/mollyboo_dptv9k.jpg)
+![alt text](http://res.cloudinary.com/glenrage/image/upload/v1501901159/molly_s6oikj.jpg)
