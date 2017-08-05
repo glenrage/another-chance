@@ -1,5 +1,6 @@
 'use strict';
 
+// require('dotenv').load();
 const mongoose = require('mongoose');
 const router = require('express').Router();
 const passport = require('passport');
@@ -8,17 +9,21 @@ const auth = require('../auth');
 
 //route to create new users
 router.post('/users', function(req, res, next) {
-  const user = new User();
 
-  user.firstName = req.body.user.firstName;
-  user.lastName = req.body.user.lastName;
-  user.email = req.body.user.email;
-  user.work = req.body.user.work;
-  user.position = req.body.user.position;
-  user.phone = req.body.user.phone;
+    const user = new User();
 
-  user.save().then(function() {
-    return res.json({user: user.toAuthJSON()});
+    user.firstName = req.body.user.firstName;
+    user.lastName = req.body.user.lastName;
+    user.email = req.body.user.email;
+    user.setPassword(req.body.user.password);
+    user.company = req.body.user.company;
+    user.position = req.body.user.position;
+    user.phone = req.body.user.phone;
+
+    user.save().then(function() {
+  
+    return res.json({user: user.toAuthJSON()})
+
   }).catch(next);
 });
 
@@ -66,8 +71,8 @@ router.put('/user', auth.required, function(req, res, next){
     if(typeof req.body.user.email !== 'undefined'){
       user.email = req.body.user.email;
     }
-    if(typeof req.body.user.work !== 'undefined'){
-      user.work = req.body.user.work;
+    if(typeof req.body.user.company !== 'undefined'){
+      user.company = req.body.user.company;
     }
     if(typeof req.body.user.position !== 'undefined'){
       user.position = req.body.user.position;

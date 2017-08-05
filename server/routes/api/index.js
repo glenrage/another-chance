@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 router.use('/', require('./users'));
+router.use('/animals', require('./animals'));
 
 //error route handler to convert mongoose validation errors so the front end can consume otherwise would return 500 internal server error
 router.use(function(err, req, res, next) {
