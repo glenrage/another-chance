@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
+const slug = require('slug')
 
 const AnimalSchema = new mongoose.Schema({
   slug: {type: String, lowercase: true, unique: true},
@@ -14,15 +15,15 @@ const AnimalSchema = new mongoose.Schema({
   contactNumber: String,
   vetName: String,
   location: String,
-  photo: String
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  photo: String,
+  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, {timestamps: true});
 
 AnimalSchema.plugin(uniqueValidator, {message: 'is already taken'});
 
 //take name of animal and generate unique slug url
 AnimalSchema.methods.slugify = function() {
-  this.slug = slug(this.name) + '-' + (Math.random() * Math.pow(36, 6) | 0).toString(36);
+  this.slug = slug(this.name) + '-' + (Math.random() * Math.pow(36, 4) | 0).toString(36);
 }
 
 //generate slug before Mongoose tries to validate model
@@ -46,7 +47,7 @@ AnimalSchema.methods.toJSONFor = function(user) {
     vetName: this.vetName,
     location: this.location,
     photo: this.photo,
-    author: this.author.toProfileJSONFor(user)
+    createdBy: this.createdBy.toProfileJSONFor(user)
   };
 };
 
