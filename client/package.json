@@ -1,10 +1,11 @@
 {
-  "name": "Another-Chance-Front End",
+  "name": "Another-Chance-Front-End",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "react-scripts": "1.0.10"

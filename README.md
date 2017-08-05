@@ -68,3 +68,8 @@ createdBy: (this field is automatically populated by the corresponding User)
 * React
 * Redux
 * Create-React-App
+
+##### Credits
+Built by Glen Pham and his dog Molly
+
+![alt text](http://res.cloudinary.com/glenrage/image/upload/v1501901159/molly_s6oikj.jpg)
