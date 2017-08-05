@@ -1,4 +1,11 @@
 # Another-chance
+
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Build Status](https://travis-ci.org/glenrage/another-chance.svg?branch=master)](https://travis-ci.org/glenrage/another-chance)
+[![Coverage Status](https://coveralls.io/repos/github/glenrage/another-chance/badge.svg?branch=master)](https://coveralls.io/github/glenrage/another-chance?branch=master)
+[![dependencies Status](https://david-dm.org/expressjs/express/status.svg)](https://david-dm.org/expressjs/express)
+[![devDependencies Status](https://david-dm.org/expressjs/express/dev-status.svg)](https://david-dm.org/expressjs/express?type=dev)
+
 Another chance is an application for animal non profit organizations to store and manage animal blood donors.
 
 ## User Stories
