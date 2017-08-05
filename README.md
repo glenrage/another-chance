@@ -110,5 +110,5 @@ Create-React-Scripts will launch, open your browser to http://localhost:3001
 
 Built by Glen Pham and his dog Molly
 
-![alt text](http://res.cloudinary.com/glenrage/image/upload/v1501901159/molly_s6oikj.jpg)
+http://res.cloudinary.com/glenrage/image/upload/c_scale,w_445/v1501914520/mollyboo_dptv9k.jpg
 
