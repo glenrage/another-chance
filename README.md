@@ -3,15 +3,20 @@ Another chance is an application for animal non profit organizations to store an
 
 ## User Stories
 
-* As a Veterinarian,
+#### As a Veterinarian,
 + I want access to an animal donor database that I can quickly query records by animal type & location.
 + I want to be able to create, edit, and retrieve animal records.
 + I want to view all existing animal records.
 
-* As an Administrative User,
+#### As an Administrative User,
 + I want to create, edit, retrieve and delete User accounts.
 + I want to view how many Users are in the database.
 + I want to view how many Animals are in the database.
+
+#### As a Developer,
++ I want to gain a sense of purpose and make my heart feel all warm and fuzzy by using my skills to perform altruistic work.
++ I want to write clean, semantic, readable code with comments so that other users may contribute.
+
 
 ### Access levels
 
@@ -51,3 +56,15 @@ location: Puerto Rico,
 photo: cutest_dog.jpg,
 createdBy: Glen Pham
 ```
+## Technology Stacks
+
+#### Server side
+* Node
+* Express
+* MongoDB
+* Passport
+
+#### Client side
+* React
+* Redux
+* Create-React-App
