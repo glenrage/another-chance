@@ -54,7 +54,7 @@ contactNumber: 111-111-1111,
 vetName: Mrs. Lee,
 location: Puerto Rico,
 photo: cutest_dog.jpg,
-createdBy: Glen Pham
+createdBy: (this field is automatically populated by the corresponding User)
 ```
 ## Technology Stacks
 
