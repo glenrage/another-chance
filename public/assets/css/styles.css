@@ -71,19 +71,22 @@
 
 /* Navbar*/
 
-#navImg {
-    height: 70px;
+#nav-img {
+  width:90px;
+  height:90px;
+  border-radius: 5%;
+  object-fit: cover;
 }
 
 
 /*Banner with Buttons*/
 
-#ggIcon {
+#ooIcon {
     width: 20%;
 }
 
 #banner {
-    background: url(./../images/image1.jpg) no-repeat center center;
+    background: url(./../images/splash.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -92,28 +95,28 @@
     margin: auto -30px auto -30px;
 }
 
-#logoSection {
+#banner-logo {
     text-align: center;
     padding-top: 4%;
     color: black;
 }
 
-#logoImg {
+#logo-img {
     height: 120px;
 }
 
-#logoText {
+#logo-text {
     font-family: 'Podkova', serif;
     font-size: 60px;
 }
 
-#buttonSection {
+#button-section {
     display: flex;
     justify-content: center;
     height: 70%;
 }
 
-#btnDiv {
+#button-div {
     align-self: center;
 }
 

@@ -15,12 +15,14 @@ class Navbar extends React.Component {
                 <span className="icon-bar"></span>
               </button>
             <Link className="navbar-brand" to="/">
-              <img id="nav-img" src="/assets/images/nav-logo.jpg" alt="Logo" />
+              <img id="nav-img" src="/assets/images/logo.jpg" alt="Logo" />
             </Link>
           </div>
           <div className="collapse navbar-collapse" id="ooNavbar">
             <ul className="nav navbar-nav navbar-right">
-              <li className="active"><Link to="#root"><span className="icon"></span>Home</Link></li>
+              <li className="active"><Link to="#root"><span className="icon"></span>Casa</Link></li>
+              <li className="active"><Link to="#about-us"><span className="icon"></span>Acerca De</Link></li>
+              <li><Link to="/auth"><span className="glyphicon glyphicon-log-in"></span> Auth</Link></li>
             </ul>
           </div>
         </div>
