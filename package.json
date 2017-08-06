@@ -2,10 +2,10 @@
   "name": "another-chance-api",
   "version": "1.0.0",
   "directories": {
-   "test": "test"
+    "test": "test"
   },
   "engines": {
-    "node":"8.1.2"
+    "node": "8.1.2"
   },
   "description": "Another chance",
   "main": "app.js",
@@ -46,7 +46,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-notification-system": "^0.2.14",
-    "react-router": "^4.1.2",
+    "react-router": "^3.0.5",
     "request": "2.81.0",
     "slug": "0.9.1",
     "superagent": "^3.5.2",
