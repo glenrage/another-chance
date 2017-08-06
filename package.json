@@ -11,7 +11,7 @@
     "dev-server": "nodemon ./server.js",
     "test": "mocha",
     "dev": "webpack -w",
-    "heroku-postbuild": "webpack -p --progress"
+    "heroku-postbuild": "npm install --only=dev && webpack -p --progress"
   },
   "repository": {
     "type": "git",
