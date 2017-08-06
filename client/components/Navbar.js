@@ -20,9 +20,9 @@ class Navbar extends React.Component {
           </div>
           <div className="collapse navbar-collapse" id="ooNavbar">
             <ul className="nav navbar-nav navbar-right">
-              <li className="active"><Link to="#root"><span className="icon"></span>Casa</Link></li>
-              <li className="active"><Link to="#about-us"><span className="icon"></span>Acerca De</Link></li>
-              <li><Link to="/auth"><span className="glyphicon glyphicon-log-in"></span> Auth</Link></li>
+              <li className="active"><Link to="#root"><i className="fa fa-home" aria-hidden="true"></i>  Casa</Link></li>
+              <li><Link to="#about-us"><i className="fa fa-info" aria-hidden="true"></i> Acerca De</Link></li>
+              <li><Link to="/auth"><i className="fa fa-sign-in" aria-hidden="true"></i> Auth</Link></li>
             </ul>
           </div>
         </div>
