@@ -34,6 +34,56 @@ router.param('animal', function(req, res, next, slug) {
     }).catch(next);
 })
 
+//Combine all queries into a single Promise with Promise.all(). This method takes an array of promises and tries to resolve all promises, then passes an array of resolved values to the attached .then handler. Any values not wrapped in a promise will be considered resolved.
+router.get('/', auth.optional, function(req, res, next) {
+  let query = {}
+  let limit = 20; //how many animals being returned
+  let offset = 0; //number of animals to skip for query
+
+  if(typeof req.query.limit !== 'undefined'){
+    limit = req.query.limit;
+  }
+
+  if(typeof req.query.offset !== 'undefined'){
+    offset = req.query.offset;
+  }
+
+  Promise.all([
+    req.query.createdBy ? User.findOne({firstName: req.query.createdBy}) : null
+  ]).then(function(results) {
+    let createdBy = results[0];
+
+    if(createdBy) {
+      query.createdBy = createdBy._id;
+    }
+
+  return Promise.all([
+    Animal.find(query)
+      .limit(Number(limit))
+      .skip(Number(offset))
+      // .sort({createdAt:'name'})
+      .populate('createdBy')
+      .exec(),
+    Animal.count(query).exec(),
+    req.payload ? User.findById(req.payload.id) : null,
+  ]).then(function(results) {
+    let animals = results[0];
+    let animalsCount = results[1];
+    let user = results[2];
+
+    return res.json({
+      animals: animals.map(function(animal){
+        console.log('animal ----' + animal)
+        console.log('user ---' + user)
+        return animal.toJSONFor(user);
+      }),
+      animalsCount: animalsCount
+    });
+    });
+  }).catch(next);
+})
+
+
 router.get('/:animal', auth.required, function(req, res, next) {
   Promise.all([
     req.payload ? User.findById(req.payload.id) : null,

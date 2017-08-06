@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { promiseMiddleware } from './middleware';
 import App from './components/App';
 
 const defaultState = {
@@ -10,10 +11,14 @@ const defaultState = {
 };
 
 const reducer = function(state = defaultState, action) {
+  switch (action.type) {
+    case 'HOME_PAGE_LOADED':
+      return { ...state, animals: action.payload.animals };
+  }
   return state;
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(promiseMiddleware));
 
 
 ReactDOM.render((

@@ -1,6 +1,6 @@
 //middleware intercepts and transform actions, our case payload is a promise
 //middleware is a function of a function of a function
-const promiseMiddleWare = store => next => action => {
+const promiseMiddleware = store => next => action => {
   //checks if action.payload is a promise
   if(isPromise(action.payload)) {
     //wait for promise to resolve
@@ -32,5 +32,5 @@ function isPromise(func) {
 }
 
 export {
-  promiseMiddleWare
+  promiseMiddleware
 };

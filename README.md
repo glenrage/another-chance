@@ -7,8 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-
-Another chance is an application for animal non profit organizations to store and manage animal blood donors.
+Another chance is an application for animal non profit organizations to store and manage animal blood donors. *Still under heavy construction*
 
 [https://another-chance.herokuapp.com/]
 

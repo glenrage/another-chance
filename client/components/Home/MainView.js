@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const MainView = props => {
   return (
-    <div className="col-md-9">
+    <div className="col-md-10">
       <AnimalFeed
         animals={ props.animals }
       />

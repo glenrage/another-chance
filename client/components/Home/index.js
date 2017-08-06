@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 //mapDispatchToProps maps a dispatch function to actions
 //component can now call this.props.onLoad to fire off an event HOME PAGE LOADED, payload contains HTTP promise
 const mapDispatchToProps = dispatch => ({
-  onLoad: payload =>
+  onLoad: (payload) =>
     dispatch({ type: 'HOME_PAGE_LOADED', payload })
 })
 //each function that mapDispatchToProps returns gets attached to components props.
@@ -31,7 +31,8 @@ class Home extends React.Component {
       <div className="container-fluid">
         <div className="row">
           <Banner appName={this.props.appName}/>
-          <About />
+
+          <MainView />
         </div>
       </div>
     )
