@@ -9,7 +9,6 @@
   "scripts": {
     "start": "node ./server.js",
     "dev-server": "nodemon ./server.js",
-    "test": "mocha",
     "dev": "webpack -w",
     "heroku-postbuild": "npm install --only=dev && webpack -p --progress"
   },
