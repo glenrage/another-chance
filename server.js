@@ -11,7 +11,7 @@ const http = require('http'),
 
 require('dotenv').load();
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'PRODUCTION';
 
 // Create global app object
 const app = express();
