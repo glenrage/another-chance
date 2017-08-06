@@ -10,7 +10,8 @@
     "start": "node ./server.js",
     "dev-server": "nodemon ./server.js",
     "test": "mocha",
-    "dev": "webpack -w"
+    "dev": "webpack -w",
+    "heroku-postbuild": "webpack -p --progress"
   },
   "repository": {
     "type": "git",
