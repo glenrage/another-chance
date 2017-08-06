@@ -1,6 +1,9 @@
 {
   "name": "another-chance-api",
   "version": "1.0.0",
+  "directories": {
+   "test": "test"
+  },
   "engines": {
     "node":"8.1.2"
   },
@@ -8,6 +11,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./server.js",
+    "test": "./node_modules/mocha/bin/_mocha",
     "dev-server": "nodemon ./server.js",
     "dev": "webpack -w",
     "heroku-postbuild": "npm install --only=dev && webpack -p --progress"
