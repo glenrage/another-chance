@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Banner extends React.Component {
-  render(){
+const Banner = ({ appName }) => {
     return (
       <div className="row" id="banner">
         <div id="banner-logo">
-          <span id="logo-text"></span>
+          <span id="logo-text"><h6>{ appName }</h6></span>
         </div>
         <div id="button-section">
           <div id="button-div">
@@ -17,8 +16,7 @@ class Banner extends React.Component {
         </div>
       </div>
 
-    )
-  }
+  )
 }
 
 export default Banner
