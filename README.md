@@ -7,8 +7,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
+Another chance is an application for animal non profit organizations to store and manage animal blood donors. *Still under heavy construction*
 
-Another chance is an application for animal non prÂofit organizations to store and manage animal blood donors.
+[https://another-chance.herokuapp.com/]
 
 ## User Stories
 
@@ -112,4 +113,3 @@ Create-React-Scripts will launch, open your browser to http://localhost:3001
 Built by Glen Pham and his dog Molly
 
 ![alt text](http://res.cloudinary.com/glenrage/image/upload/c_scale,w_394/v1501914520/mollyboo_dptv9k.jpg)
-

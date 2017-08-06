@@ -9,9 +9,9 @@ class About extends React.Component{
             <h1>Acerca De</h1>
             <p>Todos los días, mascotas como los suyos necesitan transfusiones de sangre.  Para muchos procedimientos, una transfusión es necesaria, y sin donantes de sangre animal, los veterinarios no pueden realizar las operaciones que pueden salvar la vida de ese miembro amado de su familia u otros animales en necesidad.  Colitas para la  Vida es un proyecto de Colitas Sonrientes, Inc.  Es un registro de posibles donantes de sangre animal  en Puerto Rico.  Si usted y su mascota desean formar parte del registro, comunica con su veterinario. </p>
             <hr/>
-            <div class="container">
-	            <div class="row">
-		            <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="http://2.bp.blogspot.com/-H6MAoWN-UIE/TuRwLbHRSWI/AAAAAAAABBk/89iiEulVsyg/s400/Free%2BNature%2BPhoto.jpg" /></div>
+            <div className="container">
+	            <div className="row">
+		            <div className="col-md-3 col-sm-4 col-xs-6"><img className="img-responsive" src="http://2.bp.blogspot.com/-H6MAoWN-UIE/TuRwLbHRSWI/AAAAAAAABBk/89iiEulVsyg/s400/Free%2BNature%2BPhoto.jpg" /></div>
 
                 </div>
             </div>
