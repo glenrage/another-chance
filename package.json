@@ -2,9 +2,6 @@
   "name": "another-chance-api",
   "version": "1.0.0",
   "description": "Another chance",
-  "directories": {
-    "test": "test"
-  },
   "main": "app.js",
   "scripts": {
     "start": "node ./server.js",
