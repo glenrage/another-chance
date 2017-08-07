@@ -1,33 +1,85 @@
 import React from 'react'
 import { Link } from 'react-router';
 
+const LoggedOutView = props => {
+  if (!props.currentUser) {
+    return (
+      <ul className="nav navbar-nav navbar-right">
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="login" className="nav-link">
+            Sign in
+          </Link>
+        </li>
+      </ul>
+    );
+  }
+  return null;
+}
+
+const LoggedInView = props => {
+  if (props.currentUser) {
+    return (
+      <ul className="nav navbar-nav navbar-right">
+
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="animal-input" className="nav-link">
+            <i className="ion-compose"></i>&nbsp;New Animal
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="settings" className="nav-link">
+            <i className="ion-gear-a"></i>&nbsp;Settings
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link
+            to={`@${props.currentUser.firstName}`}
+            className="nav-link">
+            <img src={props.currentUser.image} className="user-pic" />
+            {props.currentUser.firstName}
+          </Link>
+        </li>
+
+      </ul>
+    );
+  }
+
+  return null;
+};
+
+
 class Header extends React.Component {
   render() {
 
     return(
-      <div className="row-header">
-        <nav className="navbar navbar-inverse navbar-fixed-top">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="ooNavbar">
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-            <Link className="navbar-brand" to="/">
-              <img id="nav-img" src="/assets/images/logo.jpg" alt="Logo" />
-            </Link>
-          </div>
-          <div className="collapse navbar-collapse" id="ooNavbar">
-            <ul className="nav navbar-nav navbar-right">
-              <li className="active"><Link to="#root"><i className="fa fa-home" aria-hidden="true"></i>  Casa</Link></li>
-              <li><Link to="#about-us"><i className="fa fa-info" aria-hidden="true"></i> Acerca De</Link></li>
-              <li><Link to="/auth"><i className="fa fa-sign-in" aria-hidden="true"></i> Auth</Link></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+
+      <nav className="navbar navbar-light">
+       <div className="container">
+
+         <Link to="/" className="navbar-brand">
+            <img id="nav-img" src="/assets/images/logo.jpg" alt="Logo" />
+         </Link>
+
+         <LoggedOutView currentUser={this.props.currentUser} />
+
+         <LoggedInView currentUser={this.props.currentUser} />
+       </div>
+     </nav>
+
     )
   }
 }

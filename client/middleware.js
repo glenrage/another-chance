@@ -1,8 +1,12 @@
+import agent from './agent';
+
 //middleware intercepts and transform actions, our case payload is a promise
 //middleware is a function of a function of a function
 const promiseMiddleware = store => next => action => {
   //checks if action.payload is a promise
   if(isPromise(action.payload)) {
+    store.dispatch({ type: 'ASYNC_START', subtype: action.type });
+
     //wait for promise to resolve
     action.payload.then(
       //dispatch action after overwriting payload of a promise when successfully resolves
@@ -26,11 +30,25 @@ const promiseMiddleware = store => next => action => {
   next(action);
 };
 
-//assume something is a promise if it has a property called then
+//assume something is a promise if it has a property called .then
 function isPromise(func) {
   return func && typeof func.then === 'function';
 }
 
+const localStorageMiddleware = store => next => action => {
+  if (action.type === 'REGISTER' || action.type === 'LOGIN') {
+    if(!action.error) {
+      window.localStorage.setItem('jwt', action.payload.user.token);
+      agent.setToken(action.payload.user.token);
+    }
+  } else if (action.type === 'LOGOUT') {
+    window.localStorage.setItem('jwt', '');
+    agent.setToken(null);
+  }
+  next(action);
+};
+
 export {
+  localStorageMiddleware,
   promiseMiddleware
 };

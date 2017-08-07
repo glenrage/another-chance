@@ -5,7 +5,7 @@ import AnimalFeed from '../AnimalFeed';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  animals: state.animals
+  animals: state.home.animals
 });
 
 const MainView = props => {
