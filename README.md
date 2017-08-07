@@ -9,7 +9,9 @@
 
 Another chance is an application for animal non profit organizations to store and manage animal blood donors. *Still under heavy construction*
 
-[https://another-chance.herokuapp.com/]
+
+Deployed URL - https://another-chance.herokuapp.com/
+Man hours spent - https://wakatime.com/project/another-chance
 
 ## User Stories
 

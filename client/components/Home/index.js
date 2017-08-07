@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 const Promise = global.Promise;
 
 const mapStateToProps = state => ({
-  appName: state.appName
+  appName: state.common.appName
 });
 
 //mapDispatchToProps maps a dispatch function to actions
