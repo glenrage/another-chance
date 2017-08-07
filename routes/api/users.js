@@ -1,6 +1,6 @@
 'use strict';
 
-// require('dotenv').load();
+require('dotenv').load();
 const mongoose = require('mongoose');
 const router = require('express').Router();
 const passport = require('passport');
@@ -9,22 +9,29 @@ const auth = require('../auth');
 
 //route to create new users
 router.post('/users', function(req, res, next) {
+    if(req.body.user.secret !== process.env.SECRET) {
+      return res.status(401).json({errors: {secret: "invalid secret"}});
+    }
 
-    const user = new User();
+    if(req.body.user.secret === process.env.SECRET) {
+      const user = new User();
 
-    user.firstName = req.body.user.firstName;
-    user.lastName = req.body.user.lastName;
-    user.email = req.body.user.email;
-    user.setPassword(req.body.user.password);
-    user.company = req.body.user.company;
-    user.position = req.body.user.position;
-    user.phone = req.body.user.phone;
+      user.firstName = req.body.user.firstName;
+      user.lastName = req.body.user.lastName;
+      user.email = req.body.user.email;
+      user.setPassword(req.body.user.password);
+      user.company = req.body.user.company;
+      user.position = req.body.user.position;
+      user.phone = req.body.user.phone;
 
-    user.save().then(function() {
+      user.save().then(function() {
 
-    return res.json({user: user.toAuthJSON()})
+        return res.json({user: user.toAuthJSON()})
 
-  }).catch(next);
+      }).catch(next);
+    }
+
+
 });
 
 router.post('/users/login', function(req, res, next) {

@@ -1,5 +1,5 @@
 import React from 'react';
-// import ListErrors from './ListErrors';
+import ListErrors from './ListErrors';
 import agent from '../agent';
 import { connect } from 'react-redux';
 
@@ -46,7 +46,7 @@ class Login extends React.Component {
                 </a>
               </p>
 
-
+              <ListErrors errors={this.props.errors} />
 
               <form onSubmit={this.submitForm(email, password)}>
                 <fieldset>
