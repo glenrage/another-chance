@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AnimalFeed = props => {
-  console.log('animal feed props' + JSON.stringify(props))
+
   if(!props.animals) {
     return (
       <div className="animal-preview"> Loading... </div>

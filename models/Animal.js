@@ -6,16 +6,16 @@ const slug = require('slug')
 
 const AnimalSchema = new mongoose.Schema({
   slug: {type: String, lowercase: true, unique: true},
-  name: String,
-  type: String,
+  name: {type: String, index: true},
+  type: {type: String, index: true},
   breed: String,
   weight: String,
   age: String,
-  bloodType: String,
+  bloodType: {type: String, index: true},
   contactName: String,
   contactNumber: String,
   vetName: String,
-  location: String,
+  location: {type: String, index: true},
   photo: String,
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, {timestamps: true});

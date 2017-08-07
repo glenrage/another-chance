@@ -5,13 +5,14 @@ const jwt = require('jsonwebtoken'); //JSON web token plugin
 const secret = require('../config').secret; //secret to validate JSON web tokens
 
 const UserSchema = new mongoose.Schema({
-  firstName: {type: String, lowercase: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
-  lastName: {type: String, lowercase: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
+  firstName: {type: String, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
+  lastName: {type: String, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
   email: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
   company: String,
   position: String,
-  phone: Number,
+  phone: String,
   admin: {type: Boolean, default: true },
+  // secret: {type: String, required: true },
   hash: String,
   salt: String
 }, {timestamps: true});
