@@ -52,6 +52,12 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
+          <Link to="animals" className="nav-link">
+            <i className="ion-gear-a"></i>&nbsp;Animals
+          </Link>
+        </li>
+
+        <li className="nav-item">
           <Link
             to={`@${props.currentUser.firstName}`}
             className="nav-link">

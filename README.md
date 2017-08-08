@@ -6,11 +6,12 @@
 [![devDependencies Status](https://david-dm.org/expressjs/express/dev-status.svg)](https://david-dm.org/expressjs/express?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 Another chance is an application for animal non profit organizations to store and manage animal blood donors. *Still under heavy construction*
 
 
-Deployed URL - https://another-chance.herokuapp.com/
+Deployed URL -
+
+
 Man hours spent - https://wakatime.com/project/another-chance
 
 ## User Stories

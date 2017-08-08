@@ -1,8 +1,10 @@
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'HOME_PAGE_LOADED':
+    case 'ANIMAL_PAGE_LOADED':
       return {
-        ...state, };
+        ...state,
+        animals: action.payload.animals
+      };
   }
 
   return state;
