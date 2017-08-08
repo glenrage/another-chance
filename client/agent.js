@@ -14,11 +14,17 @@ const requests = {
     superagent.post(`${API_ROOT}${url}`, body).use(tokenPlugin).then(responseBody),
   put: (url, body) =>
     superagent.put(`${API_ROOT}${url}`, body).use(tokenPlugin).then(responseBody),
+  del: url =>
+    superagent.del(`${API_ROOT}${url}`).use(tokenPlugin).then(responseBody)
 };
 
 const Animals = {
   all: page =>
-    requests.get(`/animals?limit=10`)
+    requests.get(`/animals?limit=10`),
+  del: slug =>
+    requests.del(`/animals/${slug}`),
+  get: slug =>
+    requests.get(`/animals/${slug}`)
 };
 
 let token = null

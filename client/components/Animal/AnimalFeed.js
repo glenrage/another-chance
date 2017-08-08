@@ -1,6 +1,8 @@
 import React from 'react';
+import AnimalEdit from './AnimalEdit'
 
 const AnimalFeed = props => {
+  console.log(props)
 
   if(!props.animals) {
     return (
@@ -14,11 +16,12 @@ const AnimalFeed = props => {
     );
   }
 
+  // const canEdit = this.props.currentUser && this.props.currentUser.firstName === this.props.animals[0].createdBy.firstName
+
   return (
     <div>
     {
       props.animals.map((animal, index) => {
-
         return (
           <div className="col-md-3 col-sm-4" key={index}>
             <div className="animal-block clearfix">
@@ -35,6 +38,9 @@ const AnimalFeed = props => {
               <p className="animal-list"><strong>Created By:</strong> {animal.createdBy.firstName}</p>
               <img src={animal.photo} className="animal-photo" />
 
+              <AnimalEdit
+                animal={props.animal}
+                 />
               </div>
             </div>
         );
@@ -45,3 +51,5 @@ const AnimalFeed = props => {
 };
 
 export default AnimalFeed
+
+// canEdit={canEdit}
