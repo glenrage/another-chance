@@ -37,9 +37,8 @@
     border-top: 0 none;
 }
 
-.capitalize-name {
-    text-transform: capitalize;
-}
+
+
 
 .item-table {
     overflow-x: scroll;
@@ -211,7 +210,7 @@ div #login .panel-default {
     font-size: 18px;
 }
 
-#people-list-section .people-block {
+.animal-block {
     margin: 15px auto;
     padding: 20px;
     background-color: #ebf0fb;
@@ -245,18 +244,29 @@ div #login .panel-default {
     padding: 5%;
 }
 
-.people-name {
-    font-size: 120%;
+.animal-title {
+    font-size: 140%;
+    text-transform: capitalize;
 }
 
-#admin-container .people-block {
+.animal-list {
+    font-size: 100%;
+    text-transform: capitalize;
+}
+
+.animal-photo {
+  width: 200px;
+  height: 200px;
+}
+
+/*.people-block {
     margin: 0px auto 30px;
     padding: 20px;
     border: 1px solid #eae9dc;
     border-radius: 2px;
     height: 220px;
     overflow-y: scroll;
-}
+}*/
 
 #shelter-container .manage-people-block {
     margin: 0px auto 30px;

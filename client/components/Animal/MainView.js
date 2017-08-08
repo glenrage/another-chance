@@ -1,11 +1,11 @@
 //MainView contains the animals entry feed list
 
 import React from 'react';
-import AnimalFeed from '../AnimalFeed';
+import AnimalFeed from './AnimalFeed';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  animals: state.home.animals
+  animals: state.animal.animals
 });
 
 const MainView = props => {
