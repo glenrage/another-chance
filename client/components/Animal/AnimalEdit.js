@@ -2,6 +2,7 @@ import React from 'react';
 import AnimalActions from './AnimalActions';
 
 const AnimalEdit = props => {
+  console.log(props)
   const animal = props.animal;
 
   return (

@@ -2,7 +2,7 @@ import superagentPromise from 'superagent-promise';
 import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
-
+const omitSlug = animal => Object.assign({}, animal, { slug: undefined });
 const API_ROOT = 'http://localhost:3000/api';
 
 const responseBody = res => res.body;
@@ -24,7 +24,12 @@ const Animals = {
   del: slug =>
     requests.del(`/animals/${slug}`),
   get: slug =>
-    requests.get(`/animals/${slug}`)
+    requests.get(`/animals/${slug}`),
+  update: animal =>
+    requests.put(`/animals/${animal.slug}`, { animal: omitSlug(animal) }),
+  create: animal =>
+    requests.post(`/animals`, { animal })
+
 };
 
 let token = null

@@ -5,13 +5,15 @@ import common from './reducers/common';
 import home from './reducers/home';
 import settings from './reducers/settings';
 import animal from './reducers/animal';
+import animalForm from './reducers/animalForm';
 
 const reducer = combineReducers({
   auth,
+  animal,
+  animalForm,
   common,
   home,
-  settings,
-  animal
+  settings
 });
 
 
