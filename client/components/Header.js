@@ -40,7 +40,7 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
-          <Link to="animal-input" className="nav-link">
+          <Link to="animalform" className="nav-link">
             <i className="ion-compose"></i>&nbsp;New Animal
           </Link>
         </li>

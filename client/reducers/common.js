@@ -16,6 +16,8 @@ export default (state = defaultState, action) => {
       return { ...state, redirectTo: null };
     case 'LOGOUT':
       return { ...state, redirectTo: '/', token: null, currentUser: null };
+    case 'ANIMALFORM_SUBMITTED':
+      return { ...state, redirectTo: '/animals' }
     case 'SETTINGS_SAVED':
       return {
         ...state,

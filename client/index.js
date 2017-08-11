@@ -9,6 +9,7 @@ import  Login from './components/Login';
 import  Register from './components/Register';
 import Settings from './components/Settings';
 import Animal from './components/Animal';
+import AnimalForm from './components/Animal/AnimalForm';
 
 function hashLinkScroll() {
   const { hash } = window.location;
@@ -31,6 +32,8 @@ ReactDOM.render((
       <Route path="register" component={Register} />
       <Route path="settings" component={Settings} />
       <Route path="animals" component={Animal} />
+      <Route path="animalform" component={AnimalForm} />
+      <Route path="animalform/:slug" component={AnimalForm} />
 
       </Route>
     </Router>

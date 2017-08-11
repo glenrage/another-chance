@@ -73,8 +73,6 @@ router.get('/', auth.optional, function(req, res, next) {
 
     return res.json({
       animals: animals.map(function(animal){
-        console.log('animal ----' + animal)
-        console.log('user ---' + user)
         return animal.toJSONFor(user);
       }),
       animalsCount: animalsCount
