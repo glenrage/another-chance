@@ -7,8 +7,6 @@ export default (state = {}, action) => {
         inProgress: false,
         errors: action.error ? action.payload.errors : null
       };
-    case 'DELETE_ANIMAL':
-      return { ...state, redirectTo: '/animals' };
     case 'LOGIN_PAGE_UNLOADED':
     case 'REGISTER_PAGE_UNLOADED':
       return {};

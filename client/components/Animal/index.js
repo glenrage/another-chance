@@ -6,7 +6,7 @@ import AnimalFeed from './AnimalFeed'
 import AnimalEdit from './AnimalEdit'
 
 const mapStateToProps = state => ({
-  animals: state.animal.animals,
+  ...state.animal,
   currentUser: state.common.currentUser
 });
 
@@ -20,9 +20,6 @@ const mapDispatchToProps = dispatch => ({
 class Animal extends React.Component{
   componentWillMount(){
     this.props.onLoad(agent.Animals.all())
-    // this.props.onLoad(Promise.all([
-    //   agent.Animals.get(this.props.params.id)
-    // ]))
   }
 
   componentWillUnmount() {
@@ -30,18 +27,20 @@ class Animal extends React.Component{
   }
 
   render() {
-    console.log(this.props)
+
     if(!this.props.animals) {
       return null;
     }
 
 
     return (
+
       <div className="animal-page">
         <div className="container-fluid">
         <div>
         {
           this.props.animals.map((animal, index) => {
+
             return (
               <div className="col-md-3 col-sm-4" key={index}>
                 <div className="animal-block clearfix">
@@ -58,16 +57,13 @@ class Animal extends React.Component{
                   <p className="animal-list"><strong>Created By:</strong> {animal.createdBy.firstName}</p>
                   <img src={animal.photo} className="animal-photo" />
 
-                  <AnimalEdit
-                    animal={this.props.animal}
-                     />
+                  <AnimalEdit animal={animal} />
                   </div>
                 </div>
-            );
-          })
-        }
-        </div>
-      );
+              );
+            })
+          }
+          </div>
         </div>
       </div>
     )
