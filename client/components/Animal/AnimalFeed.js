@@ -2,8 +2,7 @@ import React from 'react';
 import AnimalEdit from './AnimalEdit'
 
 const AnimalFeed = props => {
-  console.log(props)
-
+  
   if(!props.animals) {
     return (
       <div className="animal-preview"> Loading... </div>

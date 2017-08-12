@@ -3,6 +3,10 @@ import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
 
+const mapStateToProps = state => ({
+  animals: state.animal.animals,
+})
+
 const mapDispatchToProps = dispatch => ({
   onClickDelete: payload =>
     dispatch({ type: 'DELETE_ANIMAL', payload })
@@ -10,17 +14,16 @@ const mapDispatchToProps = dispatch => ({
 
 const AnimalActions = props => {
   const animal = props.animal;
-  console.log(props)
   const del = () => {
     props.onClickDelete(agent.Animals.del(animal.slug))
   };
 
-  // if(props.canModify) {
+  // if(props.canEdit) {
     return (
       <span>
 
         <Link
-          to={`/editor/`}
+          to={`/animalform/${animal.slug}`}
           className="btn btn-outline-secondary btn-sm">
           <i className="ion-edit"></i>Edit Animal
         </Link>
@@ -33,4 +36,4 @@ const AnimalActions = props => {
 
 }
 
-export default connect(() => ({}), mapDispatchToProps)(AnimalActions)
+export default connect(mapStateToProps, mapDispatchToProps)(AnimalActions)

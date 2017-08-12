@@ -31,7 +31,7 @@ class AnimalForm extends React.Component {
       this.changeAge = updateFieldEvent('age');
       this.changeBloodType = updateFieldEvent('bloodType');
       this.changeContactName = updateFieldEvent('contactName');
-      this.changeContactNumber = updateFieldEvent('ContactNumber');
+      this.changeContactNumber = updateFieldEvent('contactNumber');
       this.changeVetName = updateFieldEvent('vetName');
       this.changeLocation = updateFieldEvent('location');
 
@@ -161,6 +161,15 @@ class AnimalForm extends React.Component {
                       placeholder="Animal Contact Name"
                       value={this.props.contactName}
                       onChange={this.changeContactName} />
+                  </fieldset>
+
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-md"
+                      type="text"
+                      placeholder="Animal Contact Number"
+                      value={this.props.contactNumber}
+                      onChange={this.changeContactNumber} />
                   </fieldset>
 
                   <fieldset className="form-group">
