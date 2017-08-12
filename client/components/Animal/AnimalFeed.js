@@ -2,14 +2,14 @@ import React from 'react';
 import AnimalEdit from './AnimalEdit'
 
 const AnimalFeed = props => {
-  
-  if(!props.animals) {
+
+  if(!props.animal) {
     return (
       <div className="animal-preview"> Loading... </div>
     );
   }
 
-  if(props.animals.length === 0) {
+  if(props.animal.length === 0) {
     return (
       <div className="animal-preview"> No animals yet </div>
     );
@@ -20,7 +20,7 @@ const AnimalFeed = props => {
   return (
     <div>
     {
-      props.animals.map((animal, index) => {
+      props.animal.map((animal, index) => {
         return (
           <div className="col-md-3 col-sm-4" key={index}>
             <div className="animal-block clearfix">
@@ -38,7 +38,7 @@ const AnimalFeed = props => {
               <img src={animal.photo} className="animal-photo" />
 
               <AnimalEdit
-                animal={props.animal}
+                animal={animal}
                  />
               </div>
             </div>
