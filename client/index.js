@@ -35,6 +35,7 @@ ReactDOM.render((
       <Route path="animalform" component={AnimalForm} />
       <Route path="animalform/:slug" component={AnimalForm} />
 
+
       </Route>
     </Router>
   </Provider>

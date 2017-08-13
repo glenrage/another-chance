@@ -15,12 +15,14 @@ const AnimalFeed = props => {
     );
   }
 
+
   // const canEdit = this.props.currentUser && this.props.currentUser.firstName === this.props.animals[0].createdBy.firstName
 
   return (
     <div>
     {
       props.animal.map((animal, index) => {
+        console.log(props)
         return (
           <div className="col-md-3 col-sm-4" key={index}>
             <div className="animal-block clearfix">
