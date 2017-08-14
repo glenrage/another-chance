@@ -2,7 +2,9 @@ import React from 'react';
 import AnimalEdit from './AnimalEdit'
 
 const AnimalFeed = props => {
+  console.log(props)
 
+  const animals = props.animal
   if(!props.animal) {
     return (
       <div className="animal-preview"> Loading... </div>
@@ -21,8 +23,9 @@ const AnimalFeed = props => {
   return (
     <div>
     {
-      props.animal.map((animal, index) => {
-        console.log(props)
+      // props.animal.filter(el => `${el.name} ${el.type} ${el.breed} ${el.bloodType} ${el.location}`.toUpperCase().indexOf(el.name.toUpperCase()) >= 0)
+      props.animal
+      .map((animal, index) => {
         return (
           <div className="col-md-3 col-sm-4" key={index}>
             <div className="animal-block clearfix">

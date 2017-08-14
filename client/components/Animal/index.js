@@ -9,7 +9,8 @@ import AnimalEdit from './AnimalEdit'
 const mapStateToProps = state => ({
   ...state.animal,
   currentUser: state.common.currentUser,
-  searchTerm: state.animal.searchTerm
+  searchTerm: state.animal.searchTerm,
+  searchInput: state.animal.searchInput
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -18,9 +19,9 @@ const mapDispatchToProps = dispatch => ({
   onUnload: () =>
     dispatch({ type: 'ANIMAL_PAGE_UNLOADED' }),
   onChangeSearch: value =>
-    dispatch({ type: 'UPDATE_SEARCH_TERM', key:'name', value }),
-  setSearchTerm: searchTerm =>
-    dispatch({ type: 'SET_SEARCH_TERM', payload: searchTerm })
+    dispatch({ type: 'UPDATE_SEARCH_TERM', value }),
+  onSelectSearchInput: value =>
+    dispatch({ type: 'SET_SEARCH_TERM', value })
 })
 
 class Animal extends React.Component{
@@ -28,6 +29,7 @@ class Animal extends React.Component{
     super()
 
     this.changeSearch = event => this.props.onChangeSearch(event.target.value);
+    this.selectSearchInput = event => this.props.onSelectSearchInput(event.target.value);
   }
 
   componentWillMount(){
@@ -39,8 +41,8 @@ class Animal extends React.Component{
   }
 
   render() {
-    const search = this.props.name;
-
+    const search = this.props.name
+    console.log(this.props)
     if(!this.props.animals) {
       return null;
     }
@@ -52,32 +54,42 @@ class Animal extends React.Component{
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
+
               <h3>Animal List</h3>
                 <p> Use the search to find animals</p>
-                  </div>
-                  <div className="col-md-6" id="search-section">
                     <form className="form-inline">
                       <b>Search</b>
-                        <div className="form-group">
                           <input
-                            type="search"
-                            placeholder="search"
+                            type="text"
                             className="form-control"
+
                             value={search}
                             onChange={this.changeSearch}
                           />
-                        </div>
+                          <select
+                            className="form-control"
+                            name="properties"
+
+                            onChange={this.selectSearchInput}>
+
+                            <option value="name">by Name</option>
+                            <option value="type">by Type</option>
+                            <option value="breed">by Breed</option>
+                            <option value="bloodType">by Blood Type</option>
+                            <option value="location">by Location</option>
+                          </select>
                       </form>
-            </div>
-          </div>
+                    </div>
+
+                    </div>
           <div className="row" id="animal-list">
+
             <hr />
             <AnimalFeed
             animal={this.props.animals}
             searchTerm={this.props.searchTerm}
-
+            searchInput={this.props.searchInput}
             />
-
 
           </div>
         </div>

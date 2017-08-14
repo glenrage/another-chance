@@ -46,12 +46,6 @@ const LoggedInView = props => {
         </li>
 
         <li className="nav-item">
-          <Link to="settings" className="nav-link">
-            <i className="ion-gear-a"></i>&nbsp;Settings
-          </Link>
-        </li>
-
-        <li className="nav-item">
           <Link to="animals" className="nav-link">
             <i className="ion-gear-a"></i>&nbsp;Animals
           </Link>
@@ -59,13 +53,11 @@ const LoggedInView = props => {
 
         <li className="nav-item">
           <Link
-            to={`@${props.currentUser.firstName}`}
+            to="settings"
             className="nav-link">
-            <img src={props.currentUser.image} className="user-pic" />
             {props.currentUser.firstName}
           </Link>
         </li>
-
       </ul>
     );
   }
@@ -78,9 +70,9 @@ class Header extends React.Component {
   render() {
 
     return(
+      <div className="row">
+      <nav className="navbar navbar-fixed-top">
 
-      <nav className="navbar navbar-light">
-       <div className="container">
 
          <Link to="/" className="navbar-brand">
             <img id="nav-img" src="/assets/images/logo.jpg" alt="Logo" />
@@ -89,8 +81,9 @@ class Header extends React.Component {
          <LoggedOutView currentUser={this.props.currentUser} />
 
          <LoggedInView currentUser={this.props.currentUser} />
-       </div>
+
      </nav>
+     </div>
 
     )
   }
