@@ -1,11 +1,12 @@
 import { promiseMiddleware, localStorageMiddleware } from './middleware';
-import { applyMiddleware, createStore, combineReducers } from 'redux';
+import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import auth from './reducers/auth';
 import common from './reducers/common';
 import home from './reducers/home';
 import settings from './reducers/settings';
 import animal from './reducers/animal';
 import animalForm from './reducers/animalForm';
+
 
 const reducer = combineReducers({
   auth,
@@ -16,9 +17,9 @@ const reducer = combineReducers({
   settings
 });
 
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const middleware =  applyMiddleware(promiseMiddleware, localStorageMiddleware);
-const store = createStore(reducer, middleware)
+const store = createStore(reducer, composeEnhancers(middleware))
 
 console.log('Current State :' + JSON.stringify(store.getState()))
 
