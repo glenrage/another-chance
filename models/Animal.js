@@ -16,7 +16,7 @@ const AnimalSchema = new mongoose.Schema({
   contactNumber: String,
   vetName: String,
   location: {type: String, index: true},
-  photo: String,
+  photo: {type:String, default: 'http://res.cloudinary.com/glenrage/image/upload/v1502764764/nophoto_rlta6i.jpg'},
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, {timestamps: true});
 

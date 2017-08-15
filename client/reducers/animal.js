@@ -14,13 +14,14 @@ export default (state = {}, action) => {
     case 'UPDATE_SEARCH_TERM':
       return {
         ...state,
-        [action.key]:action.value,
+
         searchTerm: action.value
       };
     case 'SET_SEARCH_TERM':
       return {
         ...state,
-        searchTerm: action.payload
+      
+        searchInput: action.value
       };
   }
   return state;

@@ -50,10 +50,10 @@ class Register extends React.Component {
           <div className="row">
 
             <div className="col-md-6 offset-md-3 col-xs-12">
-              <h1 className="text-xs-center">Sign Up</h1>
+              <h1 className="text-xs-center">Registrar</h1>
               <p className="text-xs-center">
                 <Link to="login">
-                  Have an account?
+                  ¿Ya tienes una cuenta?
                 </Link>
               </p>
 
@@ -66,7 +66,7 @@ class Register extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="First Name"
+                      placeholder="Nombre De Pila"
                       value={this.props.firstName}
                       onChange={this.changeFirstName} />
                   </fieldset>
@@ -75,7 +75,7 @@ class Register extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Last Name"
+                      placeholder="Apellido"
                       value={this.props.lastName}
                       onChange={this.changeLastName} />
                   </fieldset>
@@ -84,7 +84,7 @@ class Register extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="email"
-                      placeholder="Email"
+                      placeholder="Correo Electrónico"
                       value={this.props.email}
                       onChange={this.changeEmail} />
                   </fieldset>
@@ -93,7 +93,7 @@ class Register extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="password"
-                      placeholder="Password"
+                      placeholder="Contraseña"
                       value={this.props.password}
                       onChange={this.changePassword} />
                   </fieldset>
@@ -102,7 +102,7 @@ class Register extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Secret Access Word"
+                      placeholder="Palabra de acceso Secreto"
                       value={this.props.secret}
                       onChange={this.changeSecret} />
                   </fieldset>
@@ -111,7 +111,7 @@ class Register extends React.Component {
                     className="btn btn-lg btn-primary pull-xs-right"
                     type="submit"
                     disabled={this.props.inProgress}>
-                    Sign in
+                    Registrar
                   </button>
 
                 </fieldset>

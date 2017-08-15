@@ -104,7 +104,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Name"
+                      placeholder="Nombre del Animal"
                       value={this.props.name}
                       onChange={this.changeName} />
                   </fieldset>
@@ -113,7 +113,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Type"
+                      placeholder="Tipo de Animal"
                       value={this.props.type}
                       onChange={this.changeType} />
                   </fieldset>
@@ -122,7 +122,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Breed"
+                      placeholder="Raza Animal"
                       value={this.props.breed}
                       onChange={this.changeBreed} />
                   </fieldset>
@@ -131,7 +131,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Weight"
+                      placeholder="Peso del Animal"
                       value={this.props.weight}
                       onChange={this.changeWeight} />
                   </fieldset>
@@ -140,7 +140,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Age"
+                      placeholder="Edad Animal"
                       value={this.props.age}
                       onChange={this.changeAge} />
                   </fieldset>
@@ -149,7 +149,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Blood Type"
+                      placeholder="Tipo de Sangre Animal"
                       value={this.props.bloodType}
                       onChange={this.changeBloodType} />
                   </fieldset>
@@ -167,7 +167,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Contact Number"
+                      placeholder="Nombre de Contacto Animal"
                       value={this.props.contactNumber}
                       onChange={this.changeContactNumber} />
                   </fieldset>
@@ -176,7 +176,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Vetinarian Name"
+                      placeholder="Nombre Animal Veterinario"
                       value={this.props.vetName}
                       onChange={this.changeVetName} />
                   </fieldset>
@@ -185,7 +185,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Animal Location"
+                      placeholder="Ubicación de los Animal"
                       value={this.props.location}
                       onChange={this.changeLocation} />
                   </fieldset>
@@ -195,7 +195,7 @@ class AnimalForm extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Create Animal
+                    Enviar
                   </button>
 
                 </fieldset>
