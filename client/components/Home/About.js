@@ -12,13 +12,10 @@ class About extends React.Component{
 
 	            <div className="row">
                 <div className="gallery-img">
-		            <div className="col-sm-5">
-                  <img className="img-responsive" src="assets/images/donor.jpg"/>
-                  <img className="img-responsive" src="assets/images/poorpup.jpg"/>
-                  <img className="img-responsive" src="assets/images/cat.jpg"/>
-                  <img className="img-responsive" src="assets/images/dog.jpg"/>
-
-
+		            <div className="stuff">
+                  <img src="assets/images/donor.jpg"/>
+                  <img src="assets/images/poorpup.jpg"/>
+                  <img src="assets/images/cat.jpg"/>
                 </div>
                 </div>
             </div>

@@ -20,12 +20,12 @@ const AnimalEdit = props => {
     <span>
         <Link
           to={`/animalform/${animal.slug}`}
-          className="btn btn-outline-secondary btn-sm">
-          <i className="ion-edit"></i>Edit Animal
+          className="btn-secondary">
+          <i className="fa fa-pencil-square-o"></i>Editar Animal
         </Link>
 
-        <button className="btn btn-outline-danger btn-sm" onClick={del}>
-          <i className="ion-trash-a"></i>Delete Animal
+        <button className="btn-danger" onClick={del}>
+          <i className="fa fa-trash-o"></i>Borrar Animal
         </button>
       </span>
     </div>

@@ -55,10 +55,10 @@ class Animal extends React.Component{
           <div className="row">
             <div className="col-md-6">
 
-              <h3>Animal List</h3>
-                <p> Use the search to find animals</p>
+              <h3>Donantes de animales</h3>
+                <p>Utilizar la búsqueda para encontrar animales. Puede filtrar los animales por nombre, raza, tipo, tipo de sangre y ubicación.</p>
                     <form className="form-inline">
-                      <b>Search</b>
+                      <b>Buscar</b>
                           <input
                             type="text"
                             className="form-control"
@@ -72,11 +72,11 @@ class Animal extends React.Component{
 
                             onChange={this.selectSearchInput}>
 
-                            <option value="name">by Name</option>
-                            <option value="type">by Type</option>
-                            <option value="breed">by Breed</option>
-                            <option value="bloodType">by Blood Type</option>
-                            <option value="location">by Location</option>
+                            <option value="name">por Nombre</option>
+                            <option value="type">por Tipo</option>
+                            <option value="breed">por Raza</option>
+                            <option value="bloodType">por Tipo de Sangre</option>
+                            <option value="location">por Localizacion</option>
                           </select>
                       </form>
                     </div>

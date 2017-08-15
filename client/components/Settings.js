@@ -139,7 +139,7 @@ class SettingsForm extends React.Component {
            <input
              className="form-control form-control-lg"
              type="password"
-             placeholder="New Password"
+             placeholder="Nueva Contraseña"
              value={this.state.password}
              onChange={this.updateState('password')} />
          </fieldset>
@@ -148,7 +148,7 @@ class SettingsForm extends React.Component {
            className="btn btn-lg btn-primary pull-xs-right"
            type="submit"
            disabled={this.state.inProgress}>
-           Update Settings
+           Ajustes de Actualización
          </button>
 
        </fieldset>
@@ -165,7 +165,7 @@ class Settings extends React.Component {
           <div className="row">
             <div className="col-md-6 offset-md-3 col-xs-12">
 
-              <h1 className="text-xs-center">Your Settings</h1>
+              <h1 className="text-xs-center">Sus Configuraciones</h1>
 
               <ListErrors errors={this.props.errors}></ListErrors>
 
@@ -178,7 +178,7 @@ class Settings extends React.Component {
               <button
                 className="btn btn-outline-danger"
                 onClick={this.props.onClickLogout}>
-                Or click here to logout.
+                Click aqui para salir
               </button>
 
             </div>

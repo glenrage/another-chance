@@ -37,7 +37,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" id="main-container">
       <Header currentUser={this.props.currentUser} />
         {this.props.children}
       <Footer />

@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
 
 .gallery-img img {
-
     -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
     box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
     margin-bottom:20px;
-
+    display:inline-block;
+    height:80%;
+    width:80%;
+    margin-left:20px;
 }
 
 .btn,
@@ -20,17 +23,14 @@
     font-weight: 600;
 }
 
-
-
-
 /* Navbar*/
 
 .navbar {
-  position:fixed;
-  background-color:#6c6c6c ;
+  background-color:#2d2c2c ;
   padding: .5rem 1rem;
-
-
+  color:#c4c4c4;
+  /*color:yellow;*/
+  margin-bottom: -5px;
 }
 
 #nav-img {
@@ -40,23 +40,20 @@
   object-fit: cover;
 }
 
-
 #banner {
-    background: url(./../images/splash.jpg) ;
+    background: url(./../images/splash.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size:cover;
+    /*background-size:100%;*/
     height: 100vh;
-    margin-top: 4%;
-
+    /*margin: auto -30px auto -30px;*/
 }
-
 
 /*About Us*/
 
 #about-us {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -75,7 +72,21 @@
     padding-bottom: 50px;
 }
 
-/*Donate Section*/
+.animal-page {
+  margin-top: 50px;
+}
+
+.animal-form-page {
+  margin-top: 75px;
+}
+
+.settings-page {
+  margin-top: 50px;
+}
+
+.auth-page {
+  margin-top: 50px;
+}
 
 #search-section input,
 #search-section select,
@@ -101,8 +112,6 @@
     overflow-y: scroll;
 }
 
-
-
 .animal-title {
     font-size: 140%;
     text-transform: capitalize;
@@ -126,9 +135,9 @@
 .footer {
     text-align: center;
     padding-top: 1%;
-    background-color: black;
-    color: whitesmoke;
+    background-color: #2d2c2c;
     padding-right: 30px;
+    color:#c4c4c4;
 }
 
 .footer p,
