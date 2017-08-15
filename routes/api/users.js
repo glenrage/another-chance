@@ -22,7 +22,8 @@ router.post('/users', function(req, res, next) {
       user.setPassword(req.body.user.password);
       user.company = req.body.user.company;
       user.position = req.body.user.position;
-      user.phone = req.body.user.phone;
+      user.phoneNumber = req.body.user.phoneNumber;
+    
 
       user.save().then(function() {
 
@@ -85,8 +86,8 @@ router.put('/user', auth.required, function(req, res, next){
     if(typeof req.body.user.position !== 'undefined'){
       user.position = req.body.user.position;
     }
-    if(typeof req.body.user.phone !== 'undefined'){
-      user.phone = req.body.user.phone;
+    if(typeof req.body.user.phoneNumber !== 'undefined'){
+      user.phone = req.body.user.phoneNumber;
     }
     if(typeof req.body.user.password !== 'undefined'){
       user.setPassword(req.body.user.password);
