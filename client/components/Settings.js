@@ -25,7 +25,7 @@ class SettingsForm extends React.Component {
       lastName: '',
       company: '',
       position: '',
-      phone: '',
+      phoneNumber: '',
       email: '',
       password: ''
     };
@@ -55,7 +55,7 @@ class SettingsForm extends React.Component {
         lastName: this.props.currentUser.lastName || '',
         company: this.props.currentUser.company || '',
         position: this.props.currentUser.position || '',
-        phone: this.props.currentUser.phone || '',
+        phoneNumber: this.props.currentUser.phoneNumber || '',
         email: this.props.currentUser.email || '',
         password: this.props.currentUser.password || ''
       });
@@ -69,7 +69,7 @@ class SettingsForm extends React.Component {
         lastName: nextProps.currentUser.lastName,
         company: nextProps.currentUser.company,
         position: nextProps.currentUser.position,
-        phone: nextProps.currentUser.phone,
+        phoneNumber: nextProps.currentUser.phoneNumber,
         email: nextProps.currentUser.email,
         password: nextProps.currentUser.password
       }));
@@ -85,7 +85,7 @@ class SettingsForm extends React.Component {
            <input
              className="form-control"
              type="text"
-             placeholder="First Name"
+             placeholder="Nombre De Pila"
              value={this.state.firstName}
              onChange={this.updateState('firstName')} />
          </fieldset>
@@ -94,7 +94,7 @@ class SettingsForm extends React.Component {
            <input
              className="form-control"
              type="text"
-             placeholder="Last Name"
+             placeholder="Apellido"
              value={this.state.lastName}
              onChange={this.updateState('lastName')} />
          </fieldset>
@@ -103,7 +103,7 @@ class SettingsForm extends React.Component {
            <input
              className="form-control"
              type="text"
-             placeholder="Company"
+             placeholder="Empresa"
              value={this.state.company}
              onChange={this.updateState('company')} />
          </fieldset>
@@ -112,7 +112,7 @@ class SettingsForm extends React.Component {
            <input
              className="form-control"
              type="text"
-             placeholder="Position"
+             placeholder="Posición"
              value={this.state.position}
              onChange={this.updateState('position')} />
          </fieldset>
@@ -121,16 +121,16 @@ class SettingsForm extends React.Component {
            <input
              className="form-control"
              type="text"
-             placeholder="Phone Number"
-             value={this.state.phone}
-             onChange={this.updateState('phone')} />
+             placeholder="Número de Teléfono"
+             value={this.state.phoneNumber}
+             onChange={this.updateState('phoneNumber')} />
          </fieldset>
 
          <fieldset className="form-group">
            <input
              className="form-control form-control-lg"
              type="email"
-             placeholder="Email"
+             placeholder="Correo Electrónico"
              value={this.state.email}
              onChange={this.updateState('email')} />
          </fieldset>

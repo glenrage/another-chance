@@ -15,10 +15,16 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'firstName', value }),
   onChangeLastName: value =>
     dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'lastName', value }),
+  onChangeCompany: value =>
+    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'company', value }),
+  onChangePosition: value =>
+    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'position', value }),
+  onChangePhoneNumber: value =>
+    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'phoneNumber', value }),
   onChangeSecret: value =>
     dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'secret', value }),
-  onSubmit: (firstName, lastName, email, password, secret) => {
-    const payload = agent.Auth.register(firstName, lastName, email, password, secret);
+  onSubmit: (firstName, lastName, company, position, phoneNumber, email, password, secret) => {
+    const payload = agent.Auth.register(firstName, lastName,company, position, phoneNumber, email, password, secret);
     dispatch({ type: 'REGISTER', payload })
   }
 });
@@ -30,10 +36,15 @@ class Register extends React.Component {
     this.changePassword = event => this.props.onChangePassword(event.target.value);
     this.changeFirstName = event => this.props.onChangeFirstName(event.target.value);
     this.changeLastName = event => this.props.onChangeLastName(event.target.value);
+    this.changeCompany = event => this.props.onChangeCompany(event.target.value);
+    this.changePosition = event => this.props.onChangePosition(event.target.value);
+    this.changePhoneNumber = event => this.props.onChangePhoneNumber(event.target.value);
     this.changeSecret = event => this.props.onChangeSecret(event.target.value);
-    this.submitForm = (firstName, lastName, email, password, secret) => event => {
+    this.submitForm = (firstName, lastName, company, position, phoneNumber, email, password, secret) => event => {
+      console.log(event)
+      console.log(this.props)
       event.preventDefault();
-      this.props.onSubmit(firstName, lastName, email, password, secret);
+      this.props.onSubmit(firstName, lastName, company, position, phoneNumber, email, password, secret);
     }
   }
 
@@ -42,6 +53,9 @@ class Register extends React.Component {
     const password = this.props.password;
     const firstName = this.props.firstName;
     const lastName = this.props.lastName;
+    const phoneNumber = this.props.phoneNumber;
+    const position = this.props.position;
+    const company = this.props.company;
     const secret = this.props.secret;
 
     return (
@@ -59,7 +73,7 @@ class Register extends React.Component {
 
               <ListErrors errors={this.props.errors} />
 
-              <form onSubmit={this.submitForm(firstName, lastName, email, password, secret)}>
+              <form onSubmit={this.submitForm(firstName, lastName, company, position, phoneNumber, email, password, secret)}>
                 <fieldset>
 
                   <fieldset className="form-group">
@@ -78,6 +92,33 @@ class Register extends React.Component {
                       placeholder="Apellido"
                       value={this.props.lastName}
                       onChange={this.changeLastName} />
+                  </fieldset>
+
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-lg"
+                      type="text"
+                      placeholder="Empresa"
+                      value={this.props.company}
+                      onChange={this.changeCompany} />
+                  </fieldset>
+
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-lg"
+                      type="text"
+                      placeholder="Posición"
+                      value={this.props.position}
+                      onChange={this.changePosition} />
+                  </fieldset>
+
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-lg"
+                      type="text"
+                      placeholder="Número de Teléfono"
+                      value={this.props.phoneNumber}
+                      onChange={this.changePhoneNumber} />
                   </fieldset>
 
                   <fieldset className="form-group">

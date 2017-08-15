@@ -3,8 +3,8 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 const omitSlug = animal => Object.assign({}, animal, { slug: undefined });
-const API_ROOT = 'https://another-chance.herokuapp.com/api';
-// const API_ROOT = 'http://localhost:3000/api';
+// const API_ROOT = 'https://another-chance.herokuapp.com/api';
+const API_ROOT = 'http://localhost:3000/api';
 
 const responseBody = res => res.body;
 
@@ -46,8 +46,8 @@ const Auth = {
     requests.get('/user'),
   login: (email, password) =>
     requests.post('/users/login', { user: { email, password }}),
-  register: (firstName, lastName, email, password, secret) =>
-    requests.post('/users', { user: { firstName, lastName, email, password, secret } }),
+  register: (firstName, lastName, company, position, phoneNumber, email, password, secret) =>
+    requests.post('/users', { user: { firstName, lastName, company, position, phoneNumber, email, password, secret } }),
   save: user =>
     requests.put('/user', { user })
 };
