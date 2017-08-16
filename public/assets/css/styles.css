@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
 
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Roboto", sans-serif;
+}
+
 .gallery-img img {
     -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
@@ -11,30 +19,14 @@
     margin-left:20px;
 }
 
-.btn,
-.btn-sm {
-    margin-right: 2px;
-}
-
-#about-us h2,
-#contact-us h2,
-#login h2 {
-    font-family: 'Podkova', serif;
-    font-weight: 600;
-}
-
 /* Navbar*/
 
 .navbar {
   background-color:#2d2c2c ;
   padding: .5rem 1rem;
   color:#c4c4c4;
-  /*color:yellow;*/
   margin-bottom: -5px;
-  text
 }
-
-
 
 #nav-img {
   width:90px;
@@ -57,12 +49,8 @@
 
 #about-us {
     width: 100%;
-    margin: auto;
 }
 
-#about-text {
-
-}
 
 #gg-map {
     max-width: 100%;
@@ -72,7 +60,6 @@
 #about-us,
 #contact-us {
     padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 .animal-page {
@@ -81,10 +68,16 @@
 
 .animal-form-page {
   margin-top: 75px;
+  margin-bottom: 5px;
 }
 
 .settings-page {
   margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+.btn {
+  margin: 3px;
 }
 
 .auth-page {
@@ -108,11 +101,15 @@
 .animal-block {
     margin: 15px auto;
     padding: 20px;
-    background-color: #ebf0fb;
+    background-color: #dddddd;
     border: 7px double white;
     border-radius: 5px;
     height: 300px;
     overflow-y: scroll;
+}
+
+.animal-block button {
+  margin: 5px;
 }
 
 .animal-title {
@@ -129,10 +126,6 @@
   width: 200px;
   height: 200px;
 }
-
-
-
-
 /*Footer*/
 
 .footer {

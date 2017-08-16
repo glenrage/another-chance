@@ -18,14 +18,16 @@ const AnimalEdit = props => {
     <div className="animal-edit">
 
     <span>
+        <button className="btn btn-info btn-sm">
         <Link
           to={`/animalform/${animal.slug}`}
-          className="btn-secondary">
-          <i className="fa fa-pencil-square-o"></i>Editar Animal
+          className="">
+          <i className="fa fa-pencil-square-o"></i>Editar
         </Link>
+      </button>
 
-        <button className="btn-danger" onClick={del}>
-          <i className="fa fa-trash-o"></i>Borrar Animal
+        <button className="btn btn-danger btn-sm" onClick={del}>
+          <i className="fa fa-trash-o"></i>Borrar
         </button>
       </span>
     </div>

@@ -49,7 +49,7 @@ lastName : Pham,
 email : glen@glen.com,
 company : Philanthropist Coders,
 position : Web Developer,
-phone : 111-111-1111
+phoneNumber : 111-111-1111
 ```
 
 ### Animal donor JSON model example
@@ -80,7 +80,9 @@ createdBy: (this field is automatically populated by the corresponding User)
 #### Client side
 * React
 * Redux
-* Create-React-App
+* Webpack
+* Babel
+* Superagent
 
 ### Installation Instructions
 

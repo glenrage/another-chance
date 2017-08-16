@@ -94,7 +94,8 @@ class AnimalForm extends React.Component {
         <div className="container page">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
-
+              <h1> Nuevo Animal </h1>
+              <hr/>
               <ListErrors errors={this.props.errors}></ListErrors>
 
               <form>
