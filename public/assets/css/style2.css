@@ -133,17 +133,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-
-/*
-.navbar-brand {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.5rem !important;
-  padding-top: 0rem !important;
-  margin-right: 2rem !important;
-  color: white !important;
-}*/
-
-
 .nav-link:hover {
   transition: 0.1s all;
 }
@@ -188,25 +177,6 @@ footer {
   padding-bottom: 0.5rem;
 }
 
-.home-page .feed-toggle {
-  margin-bottom: -1px;
-}
-
-.home-page .feed-toggle li{
-  text-align: center;
-  display:inline;
-
-}
-
-.home-page .sidebar {
-  padding: 5px 10px 10px 10px;
-  background: #f3f3f3;
-  border-radius: 4px;
-}
-
-.home-page .sidebar p {
-  margin-bottom: 0.2rem;
-}
 
 .profile-page .user-info {
   text-align: center;
