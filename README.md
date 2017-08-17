@@ -30,6 +30,14 @@ Man hours spent - https://wakatime.com/project/another-chance
 + I want to gain a sense of purpose and make my heart feel all warm and fuzzy by using my skills to perform altruistic work.
 + I want to write clean, semantic, readable code with comments so that other users may contribute.
 
+## Software Development Life Cycle
+
+- [x] Client requirement gathering & analysis
+- [x] Software design
+- [x] Coding & Implementation (In progress)
+- [ ] Testing
+- [ ] Deployment
+- [ ] Maintenance
 
 ### Access levels
 
@@ -69,20 +77,6 @@ location: Puerto Rico,
 photo: cutest_dog.jpg,
 createdBy: (this field is automatically populated by the corresponding User)
 ```
-## Technology Stacks
-
-#### Server side
-* Node
-* Express
-* MongoDB
-* Passport
-
-#### Client side
-* React
-* Redux
-* Webpack
-* Babel
-* Superagent
 
 ### Installation Instructions
 
@@ -110,6 +104,24 @@ npm i
 npm run start
 ```
 Create-React-Scripts will launch, open your browser to http://localhost:3001
+
+## Technology Stacks
+![alt text](http://res.cloudinary.com/glenrage/image/upload/v1502997811/mern_nobysk.gif)
+
+#### Server side
+* Node
+* Express
+* MongoDB
+* Passport
+* Mocha & Chai
+
+#### Client side
+* React
+* Redux
+* Webpack
+* Babel
+* Superagent
+* Jest
 
 ##### Credits
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/glenrage/)
