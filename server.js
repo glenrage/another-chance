@@ -1,13 +1,13 @@
 const http = require('http'),
-    path = require('path'),
-    methods = require('methods'),
-    express = require('express'),
-    bodyParser = require('body-parser'),
-    session = require('express-session'),
-    cors = require('cors'),
-    passport = require('passport'),
-    errorhandler = require('errorhandler'),
-    mongoose = require('mongoose');
+      path = require('path'),
+      methods = require('methods'),
+      express = require('express'),
+      bodyParser = require('body-parser'),
+      session = require('express-session'),
+      cors = require('cors'),
+      passport = require('passport'),
+      errorhandler = require('errorhandler'),
+      mongoose = require('mongoose');
 
 require('dotenv').load();
 
@@ -79,7 +79,7 @@ app.use(function(err, req, res, next) {
   }});
 });
 
-// finally, let's start our server...
+//Start server
 const server = app.listen( process.env.PORT || 3000, function(){
   console.log('Listening on port ' + server.address().port);
 });
