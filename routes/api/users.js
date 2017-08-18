@@ -23,20 +23,15 @@ router.post('/users', function(req, res, next) {
       user.company = req.body.user.company;
       user.position = req.body.user.position;
       user.phoneNumber = req.body.user.phoneNumber;
-    
 
       user.save().then(function() {
-
         return res.json({user: user.toAuthJSON()})
-
       }).catch(next);
     }
-
-
 });
 
+//Login route for users
 router.post('/users/login', function(req, res, next) {
-  console.log('req body - ' + req.body)
   if(!req.body.user.email) {
     return res.status(422).json({errors: {email: "can't be blank"}});
   }
@@ -58,6 +53,7 @@ router.post('/users/login', function(req, res, next) {
   })(req, res, next);
 });
 
+//Route to retrieve user info
 router.get('/user', auth.required, function(req, res, next) {
   User.findById(req.payload.id).then(function(user) {
     if(!user) { return res.sendStatus(401); }
@@ -66,6 +62,7 @@ router.get('/user', auth.required, function(req, res, next) {
   }).catch(next);
 });
 
+//Route to update user info
 router.put('/user', auth.required, function(req, res, next){
     User.findById(req.payload.id).then(function(user) {
       if(!user) { return res.sendStatus(401); }

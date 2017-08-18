@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Banner = ({ appName }) => {
     return (
-      <div className="row" id="banner">
+      <div className="container-fluid" id="banner">
 
 
       </div>

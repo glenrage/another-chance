@@ -9,15 +9,24 @@
 Another chance is an application for animal non profit organizations to store and manage animal blood donors. *Still under heavy construction*
 
 
-Deployed URL -
+Deployed beta version URL - https://another-chance.herokuapp.com/
 
 
 Man hours spent - https://wakatime.com/project/another-chance
 
-## User Stories
+## Software Development Life Cycle
+
+- [x] Client requirement gathering & analysis
+- [x] Software design
+- [x] Coding & Implementation (80% Functionality & 70% Styling completed)
+- [x] Testing (In progress)
+- [x] Deployment (beta version)
+- [ ] Maintenance
+
+### User Stories
 
 #### As a Veterinarian,
-+ I want access to an animal donor database that I can quickly query records by animal type & location.
++ I want access to an animal donor database that I can quickly query records by animal type, location, breed, and blood type.
 + I want to be able to create, edit, and retrieve animal records.
 + I want to view all existing animal records.
 
@@ -25,19 +34,14 @@ Man hours spent - https://wakatime.com/project/another-chance
 + I want to create, edit, retrieve and delete User accounts.
 + I want to view how many Users are in the database.
 + I want to view how many Animals are in the database.
++ I want a secure database with Authentication to prevent unauthorized users.
 
 #### As a Developer,
 + I want to gain a sense of purpose and make my heart feel all warm and fuzzy by using my skills to perform altruistic work.
-+ I want to write clean, semantic, readable code with comments so that other users may contribute.
++ I want to develop and ship software features utilizing AGILE methodology by shipping features in short sprints to align with my client's changing needs.
++ I want to write clean, semantic, readable code with comments so that other users may contribute, maintain, and add additional features.
 
-## Software Development Life Cycle
-
-- [x] Client requirement gathering & analysis
-- [x] Software design
-- [x] Coding & Implementation (In progress)
-- [ ] Testing
-- [ ] Deployment
-- [ ] Maintenance
+# Technical Information
 
 ### Access levels
 
@@ -49,7 +53,9 @@ Users - Veterinarians and staff will be able to search, create, and update anima
 
 Only authorized users may login and view the animal donor database. Authorization is handled through Passport.JS. A JSON Web Token is issued to each user upon new account, and upon login the token is verified with the database.
 
-### User account creation JSON model example
+## JSON Examples
+
+### User account schema
 
 ```
 firstName : Glen,
@@ -60,7 +66,7 @@ position : Web Developer,
 phoneNumber : 111-111-1111
 ```
 
-### Animal donor JSON model example
+### Animal donor schema
 Bloodtype will correlate to type of animal.
 
 ```
@@ -78,7 +84,7 @@ photo: cutest_dog.jpg,
 createdBy: (this field is automatically populated by the corresponding User)
 ```
 
-### Installation Instructions
+## Installation Instructions
 
 You need two instances of terminal open. One will run the server, the other will run the client build.
 
@@ -86,7 +92,7 @@ You need two instances of terminal open. One will run the server, the other will
 git clone https://github.com/glenrage/another-chance.git
 cd another-chance
 ```
-###### Server setup
+### Server setup
 After you clone, open the first terminal window and run the following
 ```
 cd server
@@ -95,7 +101,7 @@ npm run dev
 ```
 Nodemon will launch the server to http://localhost:3000
 
-###### Client setup
+### Client setup
 
 In your other terminal window run the following commands
 ```
@@ -103,19 +109,19 @@ cd client
 npm i
 npm run start
 ```
-Create-React-Scripts will launch, open your browser to http://localhost:3001
+Webpack will create a build, then open your browser to http://localhost:3001
 
 ## Technology Stacks
 ![alt text](http://res.cloudinary.com/glenrage/image/upload/v1502997811/mern_nobysk.gif)
 
-#### Server side
+### Server side
 * Node
 * Express
 * MongoDB
 * Passport
 * Mocha & Chai
 
-#### Client side
+### Client side
 * React
 * Redux
 * Webpack
@@ -123,7 +129,7 @@ Create-React-Scripts will launch, open your browser to http://localhost:3001
 * Superagent
 * Jest
 
-##### Credits
+## Credits
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/glenrage/)
 
 

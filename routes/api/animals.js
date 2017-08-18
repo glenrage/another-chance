@@ -7,6 +7,7 @@ const Animal = mongoose.model('Animal');
 const User = mongoose.model('User');
 const auth = require('../auth');
 
+//Create new Animal route
 router.post('/', auth.required, function(req, res, next) {
   User.findById(req.payload.id).then(function(user) {
 
@@ -81,7 +82,7 @@ router.get('/', auth.optional, function(req, res, next) {
   }).catch(next);
 })
 
-
+//Get single animal entry
 router.get('/:animal', auth.required, function(req, res, next) {
   Promise.all([
     req.payload ? User.findById(req.payload.id) : null,
@@ -93,6 +94,7 @@ router.get('/:animal', auth.required, function(req, res, next) {
   }).catch(next);
 });
 
+//Update animal entry
 router.put('/:animal', auth.required, function(req, res, next) {
   User.findById(req.payload.id).then(function(user) {
     if(req.animal.createdBy._id.toString() === req.payload.id.toString()) {
@@ -138,6 +140,7 @@ router.put('/:animal', auth.required, function(req, res, next) {
   })
 })
 
+//Delete animal entry 
 router.delete('/:animal', auth.required, function(req, res, next) {
   User.findById(req.payload.id).then(function() {
     if(req.animal.createdBy._id.toString() === req.payload.id.toString()) {

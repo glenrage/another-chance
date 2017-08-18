@@ -54,12 +54,12 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-  color:#faac28;
-  font-size: 1.5em;
+  color:white;
+  font-size: 1.2em;
   font-weight:bold;
-  text-shadow: 3px 3px 3px 3px white;
-  word-spacing: 2px;
-  letter-spacing: 2px;
+
+  word-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 .navbar-nav .nav-item .nav-link i {

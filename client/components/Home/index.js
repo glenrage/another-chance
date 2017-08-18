@@ -29,7 +29,7 @@ class Home extends React.Component {
           <Banner appName={this.props.appName}/>
 
           <About />
-    
+
       </div>
     )
   }

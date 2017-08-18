@@ -1,65 +1,63 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
-
 p {
   font-family: "Roboto", sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", sans-serif;
 }
 
 .gallery-img img {
-    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
-    margin-bottom:20px;
-    display:inline-block;
-    height:80%;
-    width:80%;
-    margin-left:20px;
+  -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
+  display: inline-block;
+  height: 50%;
+  width: 50%;
+  margin-left: 20px;
 }
+
 
 /* Navbar*/
 
 .navbar {
-  background-color:#2d2c2c ;
+  background-color: #2d2c2c;
   padding: .5rem 1rem;
-  color:#c4c4c4;
+  color: #c4c4c4;
   margin-bottom: -5px;
 }
 
 #nav-img {
-  width:90px;
-  height:90px;
+  width: 90px;
+  height: 90px;
   border-radius: 5%;
   object-fit: cover;
 }
 
 #banner {
-    background: url(./../images/splash.jpg);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    /*background-size:100%;*/
-    height: 100vh;
-    /*margin: auto -30px auto -30px;*/
+  background: url(./../images/splash.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90vh;
+  /*width: 90vh;*/
+  margin: auto -30px auto -30px;
 }
+
 
 /*About Us*/
 
 #about-us {
-    width: 100%;
+  width: 100%;
 }
-
 
 #gg-map {
-    max-width: 100%;
-    margin: 30px;
-}
-
-#about-us,
-#contact-us {
-    padding-top: 50px;
+  max-width: 100%;
+  margin: 30px;
 }
 
 .animal-page {
@@ -84,28 +82,26 @@ h1,h2,h3,h4,h5,h6 {
   margin-top: 50px;
 }
 
-#search-section input,
-#search-section select,
-#search-section button {
-    margin: 10px;
+#search-section input, #search-section select, #search-section button {
+  margin: 10px;
 }
 
 #search-section {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 #search-section b {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .animal-block {
-    margin: 15px auto;
-    padding: 20px;
-    background-color: #dddddd;
-    border: 7px double white;
-    border-radius: 5px;
-    height: 300px;
-    overflow-y: scroll;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: #dddddd;
+  border: 7px double white;
+  border-radius: 5px;
+  height: 300px;
+  overflow-y: scroll;
 }
 
 .animal-block button {
@@ -113,59 +109,57 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .animal-title {
-    font-size: 140%;
-    text-transform: capitalize;
+  font-size: 140%;
+  text-transform: capitalize;
 }
 
 .animal-list {
-    font-size: 100%;
-    text-transform: capitalize;
+  font-size: 100%;
+  text-transform: capitalize;
 }
 
 .animal-photo {
   width: 200px;
   height: 200px;
 }
+
+
 /*Footer*/
 
 .footer {
-    text-align: center;
-    padding-top: 1%;
-    background-color: #2d2c2c;
-    padding-right: 30px;
-    color:#c4c4c4;
+  text-align: center;
+  padding-top: 1%;
+  background-color: #2d2c2c;
+  padding-right: 30px;
+  color: #c4c4c4;
 }
 
-.footer p,
-.footer img {
-    display: inline-block;
+.footer p, .footer img {
+  display: inline-block;
 }
 
 .footer p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-
 @media screen and (max-width: 600px) {
-    #shelter-container div.dropdown,
-    #admin-container div.dropdown {
-        float: right;
-        margin-top: -35px;
-        margin-right: 60px;
-    }
+  #shelter-container div.dropdown, #admin-container div.dropdown {
+    float: right;
+    margin-top: -35px;
+    margin-right: 60px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .manage-people-block .people-image-section,
-    .manage-people-block .people-info-section {
-        width: 100%;
-    }
-    #shelter-container .nav-tabs>li>a, #admin-container .nav-tabs>li>a {
-        height: 35px;
-        line-height: 1;
-        font-size: 80%;
-    }
-    #shelter-container .nav-tabs>li, #admin-container .nav-tabs>li {
-        width: 100%;
-    }
+  .manage-people-block .people-image-section, .manage-people-block .people-info-section {
+    width: 100%;
+  }
+  #shelter-container .nav-tabs>li>a, #admin-container .nav-tabs>li>a {
+    height: 35px;
+    line-height: 1;
+    font-size: 80%;
+  }
+  #shelter-container .nav-tabs>li, #admin-container .nav-tabs>li {
+    width: 100%;
+  }
 }
