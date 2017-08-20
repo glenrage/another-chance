@@ -104,6 +104,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: scroll;
 }
 
+.animal-block p{
+  line-height: 90%;
+  /*line-height: inherit;*/
+}
+
+
 .animal-block button {
   margin: 5px;
 }
