@@ -103,7 +103,7 @@ class AnimalForm extends React.Component {
               <h3>Información del Animal</h3>
               <form>
                 <fieldset>
-
+                  <b>Nombre</b>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -112,6 +112,7 @@ class AnimalForm extends React.Component {
                       value={this.props.name}
                       onChange={this.changeName} />
                   </fieldset>
+                  <b>Tipo</b> <i>Gato o perro</i>
 
                   <fieldset className="form-group">
                     <input
@@ -121,7 +122,7 @@ class AnimalForm extends React.Component {
                       value={this.props.type}
                       onChange={this.changeType} />
                   </fieldset>
-
+                  <b>Raza</b>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -130,7 +131,7 @@ class AnimalForm extends React.Component {
                       value={this.props.breed}
                       onChange={this.changeBreed} />
                   </fieldset>
-
+                  <b>Edad</b> <i>Usar años</i>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -139,7 +140,7 @@ class AnimalForm extends React.Component {
                       value={this.props.age}
                       onChange={this.changeAge} />
                     </fieldset>
-
+                    <b>Peso</b> <i>Usar kilogramo</i> (Apellidos, Nombre)
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -149,6 +150,7 @@ class AnimalForm extends React.Component {
                       onChange={this.changeWeight} />
                   </fieldset>
 
+                  <b>Tipo de Sangre</b> <i>Escribir “desconocido” si no lo sabe</i>
                   <fieldset className="form-group">
                     <select className="form-control" name="bloodType" onChange={this.changeBloodType}>
                       <option value="Desconocido">Desconocido</option>
@@ -169,15 +171,16 @@ class AnimalForm extends React.Component {
                     </select>
                 </fieldset>
                 <h3>Información de Contacto</h3>
+                <b>Nombre del contacto</b> <i>Apellidos, Nombre</i>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Nombre completo (Apellidos, Nombre)"
+                      placeholder="Nombre completo"
                       value={this.props.contactName}
                       onChange={this.changeContactName} />
                   </fieldset>
-
+                  <b>Teléfono</b> <i>(787)-298-7669</i>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -186,7 +189,7 @@ class AnimalForm extends React.Component {
                       value={this.props.contactNumber}
                       onChange={this.changeContactNumber} />
                   </fieldset>
-
+                  <b>Email</b>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -195,7 +198,7 @@ class AnimalForm extends React.Component {
                       value={this.props.contactEmail}
                       onChange={this.changeContactEmail} />
                   </fieldset>
-
+                  <b>Nombre del Veterinario</b>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -204,7 +207,7 @@ class AnimalForm extends React.Component {
                       value={this.props.vetName}
                       onChange={this.changeVetName} />
                   </fieldset>
-
+                  <b>Pueblo o ciudad</b>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -234,12 +237,3 @@ class AnimalForm extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnimalForm);
-
-{/* <fieldset className="form-group">
-  <input
-    className="form-control form-control-md"
-    type="text"
-    placeholder="Tipo de Sangre"
-    value={this.props.bloodType}
-    onChange={this.changeBloodType} />
-</fieldset> */}

@@ -1,5 +1,6 @@
 import React from 'react';
-import AnimalEdit from './AnimalEdit'
+import AnimalEdit from './AnimalEdit';
+const Highlight = require('react-string-highlighter');
 
 const AnimalFeed = props => {
   console.log(props)
@@ -28,6 +29,7 @@ const AnimalFeed = props => {
         return (
           <div className="col-md-3 col-sm-4" key={index}>
             <div className="animal-block clearfix">
+
               <p className="animal-title"><strong> {animal.name} </strong></p>
               <p className="animal-list"><strong>Tipo:</strong> {animal.type}</p>
               <p className="animal-list"><strong>Raza:</strong> {animal.breed}</p>
@@ -54,5 +56,3 @@ const AnimalFeed = props => {
 };
 
 export default AnimalFeed
-
-// canEdit={canEdit}
