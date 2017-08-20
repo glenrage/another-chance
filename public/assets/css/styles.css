@@ -82,17 +82,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 50px;
 }
 
-#search-section input, #search-section select, #search-section button {
-  margin: 10px;
+
+#search-input {
+  padding:5px;
+  margin: 5px;
 }
 
-#search-section {
-  padding-top: 10px;
+.highlight {
+  color:blue;
+  background-color: red;
 }
 
-#search-section b {
-  font-size: 18px;
-}
 
 .animal-block {
   margin: 15px auto;

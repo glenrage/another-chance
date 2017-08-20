@@ -51,19 +51,12 @@ class Animal extends React.Component {
             <div className="col-md-6">
 
               <h3>Donantes de animales</h3>
-              <p>Utilizar la búsqueda para encontrar animales. Puede filtrar los animales por nombre, raza, tipo, tipo de sangre y ubicación.</p>
+              <p>Escriba una palabra clave de búsqueda a continuación. Usted puede buscar el nombre del animal, ubicación, tipo de sangre, raza animal o tipo de animal.</p>
               <form className="form-inline">
                 <b>Buscar</b>
-                <input type="text" className="form-control" value={search} onChange={this.changeSearch}/>
-                
-                <select className="form-control" name="properties" onChange={this.selectSearchInput}>
+                <input type="text" className="form-control" id="search-input" value={search} onChange={this.changeSearch}/>
 
-                  <option value="name">por Nombre</option>
-                  <option value="type">por Tipo</option>
-                  <option value="breed">por Raza</option>
-                  <option value="bloodType">por Tipo de Sangre</option>
-                  <option value="location">por Localizacion</option>
-                </select>
+
               </form>
             </div>
 

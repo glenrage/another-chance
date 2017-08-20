@@ -12,7 +12,6 @@ const UserSchema = new mongoose.Schema({
   position: String,
   phoneNumber: String,
   admin: {type: Boolean, default: true },
-  // secret: {type: String, required: true },
   hash: String,
   salt: String
 }, {timestamps: true});

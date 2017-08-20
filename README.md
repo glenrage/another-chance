@@ -70,7 +70,7 @@ phoneNumber : 111-111-1111
 ```
 
 ### Animal donor schema
-Bloodtype will correlate to type of animal.
+Bloodtype will correlate to type of animal (cat or dog).
 
 ```
 name: molly,

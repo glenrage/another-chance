@@ -143,7 +143,7 @@ router.put('/:animal', auth.required, function(req, res, next) {
   })
 })
 
-//Delete animal entry
+//Delete animal record
 router.delete('/:animal', auth.required, function(req, res, next) {
   User.findById(req.payload.id).then(function() {
     if(req.animal.createdBy._id.toString() === req.payload.id.toString()) {

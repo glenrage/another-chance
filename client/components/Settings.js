@@ -85,7 +85,7 @@ class SettingsForm extends React.Component {
            <input
              className="form-control"
              type="text"
-             placeholder="Nombre De Pila"
+             placeholder="Nombre de Pila"
              value={this.state.firstName}
              onChange={this.updateState('firstName')} />
          </fieldset>
