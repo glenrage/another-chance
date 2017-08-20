@@ -148,7 +148,7 @@ class SettingsForm extends React.Component {
            className="btn btn-lg btn-primary pull-xs-right"
            type="submit"
            disabled={this.state.inProgress}>
-           Ajustes de Actualización
+           Actualizar
          </button>
 
        </fieldset>
@@ -174,9 +174,9 @@ class Settings extends React.Component {
                 onSubmitForm={this.props.onSubmitForm} />
 
               <button
-                className="btn btn-secondary-danger"
+                className="btn btn-danger"
                 onClick={this.props.onClickLogout}>
-                Click aqui para salir
+                Cerrar Sesión
               </button>
 
             </div>

@@ -6,18 +6,18 @@
 [![devDependencies Status](https://david-dm.org/expressjs/express/dev-status.svg)](https://david-dm.org/expressjs/express?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Another chance is an application for animal non profit organizations to store and manage animal blood donors. *Still under heavy construction*
+Another chance is an application for Veterinarians to store and manage animal blood donors.
 
+ *Still under development*
 
 Deployed beta version URL - https://another-chance.herokuapp.com/
-
 
 Man hours spent - https://wakatime.com/project/another-chance
 
 ## Software Development Life Cycle
 
 - [x] Client requirement gathering & analysis
-- [x] Software design
+- [x] Software design & Technology stack
 - [x] Coding & Implementation (80% Functionality & 70% Styling completed)
 - [x] Testing (In progress)
 - [x] Deployment (beta version)
@@ -26,15 +26,18 @@ Man hours spent - https://wakatime.com/project/another-chance
 ### User Stories
 
 #### As a Veterinarian,
-+ I want access to an animal donor database that I can quickly query records by animal type, location, breed, and blood type.
++ I want access to an animal blood donor database that I can quickly query records by animal type, location, breed, and blood type.
 + I want to be able to create, edit, and retrieve animal records.
 + I want to view all existing animal records.
++ I want to view profiles of other Veterinarians in case I need to contact them
 
 #### As an Administrative User,
 + I want to create, edit, retrieve and delete User accounts.
 + I want to view how many Users are in the database.
 + I want to view how many Animals are in the database.
 + I want a secure database with Authentication to prevent unauthorized users.
++ I want to view profiles of other Veterinarians in case I need to contact them.
++ I want to ensure only approved Users may create accounts by giving them a secret signup password.
 
 #### As a Developer,
 + I want to gain a sense of purpose and make my heart feel all warm and fuzzy by using my skills to perform altruistic work.
@@ -78,6 +81,7 @@ age: 15 months,
 bloodType: DEA 1.1,
 contactName: Maria Lee,
 contactNumber: 111-111-1111,
+contactEmail: MariaLee@gmail.com
 vetName: Mrs. Lee,
 location: Puerto Rico,
 photo: cutest_dog.jpg,
@@ -119,7 +123,6 @@ Webpack will create a build, then open your browser to http://localhost:3001
 * Express
 * MongoDB
 * Passport
-* Mocha & Chai
 
 ### Client side
 * React
@@ -127,7 +130,13 @@ Webpack will create a build, then open your browser to http://localhost:3001
 * Webpack
 * Babel
 * Superagent
-* Jest
+
+### Continuous Integration
+* Travis
+
+### Testing Suite
+* Mocha & Chai (Server side)
+* Jest (Client side)
 
 ## Credits
 [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/glenrage/)

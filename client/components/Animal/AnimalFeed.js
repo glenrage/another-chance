@@ -23,8 +23,7 @@ const AnimalFeed = props => {
   return (
     <div>
     {
-      // props.animal.filter(el => `${el.name} ${el.type} ${el.breed} ${el.bloodType} ${el.location}`.toUpperCase().indexOf(el.name.toUpperCase()) >= 0)
-      props.animal
+      props.animal.filter(el => `${el.name} ${el.type} ${el.breed} ${el.bloodType} ${el.location}`.toUpperCase().indexOf(props.searchTerm.toUpperCase()) >= 0)
       .map((animal, index) => {
         return (
           <div className="col-md-3 col-sm-4" key={index}>
@@ -37,10 +36,10 @@ const AnimalFeed = props => {
               <p className="animal-list"><strong>Tipo de Sangre:</strong> {animal.bloodType}</p>
               <p className="animal-list"><strong>Nombre de Contacto:</strong> {animal.contactName}</p>
               <p className="animal-list"><strong>Número de Contacto:</strong> {animal.contactNumber}</p>
+              <p className="animal-list"><strong>Email de Contacto:</strong> {animal.contactEmail}</p>
               <p className="animal-list"><strong>Nombre Veterinario:</strong> {animal.vetName}</p>
               <p className="animal-list"><strong>Localización:</strong> {animal.location}</p>
               <p className="animal-list"><strong>Creado por:</strong> {animal.createdBy.firstName}</p>
-              <img src={animal.photo} className="animal-photo" />
 
               <AnimalEdit
                 animal={animal}

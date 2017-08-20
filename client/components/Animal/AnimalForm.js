@@ -32,6 +32,7 @@ class AnimalForm extends React.Component {
       this.changeBloodType = updateFieldEvent('bloodType');
       this.changeContactName = updateFieldEvent('contactName');
       this.changeContactNumber = updateFieldEvent('contactNumber');
+      this.changeContactEmail = updateFieldEvent('contactEmail');
       this.changeVetName = updateFieldEvent('vetName');
       this.changeLocation = updateFieldEvent('location');
 
@@ -46,10 +47,11 @@ class AnimalForm extends React.Component {
         bloodType: this.props.bloodType,
         contactName: this.props.contactName,
         contactNumber: this.props.contactNumber,
+        contactEmail: this.props.contactEmail,
         vetName: this.props.vetName,
         location: this.props.location
       };
-
+      console.log(animal)
       const slug = { slug: this.props.animalSlug };
       const promise = this.props.animalSlug ?
         agent.Animals.update(Object.assign(animal, slug)) :
@@ -98,6 +100,7 @@ class AnimalForm extends React.Component {
               <hr/>
               <ListErrors errors={this.props.errors}></ListErrors>
 
+              <h3>Información del Animal</h3>
               <form>
                 <fieldset>
 
@@ -105,7 +108,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Nombre del Animal"
+                      placeholder="Nombre"
                       value={this.props.name}
                       onChange={this.changeName} />
                   </fieldset>
@@ -114,7 +117,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Tipo de Animal"
+                      placeholder="Tipo"
                       value={this.props.type}
                       onChange={this.changeType} />
                   </fieldset>
@@ -123,7 +126,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Raza Animal"
+                      placeholder="Raza"
                       value={this.props.breed}
                       onChange={this.changeBreed} />
                   </fieldset>
@@ -132,34 +135,45 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Peso del Animal"
+                      placeholder="Edad"
+                      value={this.props.age}
+                      onChange={this.changeAge} />
+                    </fieldset>
+
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-md"
+                      type="text"
+                      placeholder="Peso"
                       value={this.props.weight}
                       onChange={this.changeWeight} />
                   </fieldset>
 
                   <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-md"
-                      type="text"
-                      placeholder="Edad Animal"
-                      value={this.props.age}
-                      onChange={this.changeAge} />
-                  </fieldset>
-
+                    <select className="form-control" name="bloodType" onChange={this.changeBloodType}>
+                      <option value="Desconocido">Desconocido</option>
+                      <option value="DEA 1.1">DEA 1.1</option>
+                      <option value="DEA 1.2">DEA 1.2</option>
+                      <option value="DEA 3">DEA 3</option>
+                      <option value="DEA 4">DEA 4</option>
+                      <option value="DEA 5">DEA 5</option>
+                      <option value="DEA 6">DEA 6</option>
+                      <option value="DEA 7">DEA 7</option>
+                      <option value="DEA 8">DEA 8</option>
+                      <option value="Dal">Dal</option>
+                      <option value="Kai-1">Kai-1</option>
+                      <option value="Kai-2">Kai-2</option>
+                      <option value="A">A (Gato)</option>
+                      <option value="B">B (Gato)</option>
+                      <option value="AB">AB (Gato)</option>
+                    </select>
+                </fieldset>
+                <h3>Información de Contacto</h3>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Tipo de Sangre Animal"
-                      value={this.props.bloodType}
-                      onChange={this.changeBloodType} />
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <input
-                      className="form-control form-control-md"
-                      type="text"
-                      placeholder="Animal Contact Name"
+                      placeholder="Nombre completo (Apellidos, Nombre)"
                       value={this.props.contactName}
                       onChange={this.changeContactName} />
                   </fieldset>
@@ -168,7 +182,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Nombre de Contacto Animal"
+                      placeholder="Teléfono"
                       value={this.props.contactNumber}
                       onChange={this.changeContactNumber} />
                   </fieldset>
@@ -177,7 +191,16 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Nombre Animal Veterinario"
+                      placeholder="Email"
+                      value={this.props.contactEmail}
+                      onChange={this.changeContactEmail} />
+                  </fieldset>
+
+                  <fieldset className="form-group">
+                    <input
+                      className="form-control form-control-md"
+                      type="text"
+                      placeholder="Nombre del Veterinario"
                       value={this.props.vetName}
                       onChange={this.changeVetName} />
                   </fieldset>
@@ -186,7 +209,7 @@ class AnimalForm extends React.Component {
                     <input
                       className="form-control form-control-md"
                       type="text"
-                      placeholder="Ubicación de los Animal"
+                      placeholder="Pueblo o ciudad"
                       value={this.props.location}
                       onChange={this.changeLocation} />
                   </fieldset>
@@ -211,3 +234,12 @@ class AnimalForm extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnimalForm);
+
+{/* <fieldset className="form-group">
+  <input
+    className="form-control form-control-md"
+    type="text"
+    placeholder="Tipo de Sangre"
+    value={this.props.bloodType}
+    onChange={this.changeBloodType} />
+</fieldset> */}
