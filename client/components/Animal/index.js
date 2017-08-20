@@ -9,14 +9,16 @@ const mapStateToProps = state => ({
   ...state.animal,
   currentUser: state.common.currentUser,
   searchTerm: state.animal.searchTerm,
-  searchInput: state.animal.searchInput
+  searchInput: state.animal.searchInput,
 });
 
 const mapDispatchToProps = dispatch => ({
   onLoad: (payload) => dispatch({type: 'ANIMAL_PAGE_LOADED', payload}),
   onUnload: () => dispatch({type: 'ANIMAL_PAGE_UNLOADED'}),
   onChangeSearch: value => dispatch({type: 'UPDATE_SEARCH_TERM', value}),
-  onSelectSearchInput: value => dispatch({type: 'SET_SEARCH_TERM', value})
+  onSelectSearchInput: value => dispatch({type: 'SET_SEARCH_TERM', value}),
+  onSubmit: value => dispatch({type: 'SEARCH_SUBMIT', value})
+
 })
 
 class Animal extends React.Component {
@@ -36,8 +38,7 @@ class Animal extends React.Component {
   }
 
   render() {
-    const search = this.props.name
-    console.log(this.props)
+    const search = this.props.searchTerm
     if (!this.props.animals) {
       return null;
     }
@@ -54,6 +55,7 @@ class Animal extends React.Component {
               <form className="form-inline">
                 <b>Buscar</b>
                 <input type="text" className="form-control" value={search} onChange={this.changeSearch}/>
+                
                 <select className="form-control" name="properties" onChange={this.selectSearchInput}>
 
                   <option value="name">por Nombre</option>

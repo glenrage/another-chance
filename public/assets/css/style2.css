@@ -57,8 +57,6 @@
   color:white;
   font-size: 1.2em;
   font-weight:bold;
-
-  word-spacing: 1px;
   letter-spacing: 1px;
 }
 
@@ -73,13 +71,6 @@
   padding-bottom: .425rem;
 }*/
 
-.navbar-nav .nav-link+.nav-link {
-  margin-left: 1rem;
-}
-
-.navbar-nav .nav-item+.nav-item {
-  margin-left: 1rem;
-}
 
 .navbar-light .navbar-brand {
   color: rgba(0, 0, 0, 0.8);

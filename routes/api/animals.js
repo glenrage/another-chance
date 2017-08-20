@@ -123,6 +123,9 @@ router.put('/:animal', auth.required, function(req, res, next) {
       if(typeof req.body.animal.contactNumber !== 'undefined') {
         req.animal.contactNumber = req.body.animal.contactNumber;
       }
+      if(typeof req.body.animal.contactEmail !== 'undefined') {
+        req.animal.contactEmail = req.body.animal.contactEmail;
+      }
       if(typeof req.body.animal.vetName !== 'undefined') {
         req.animal.vetName = req.body.animal.vetName;
       }
@@ -140,7 +143,7 @@ router.put('/:animal', auth.required, function(req, res, next) {
   })
 })
 
-//Delete animal entry 
+//Delete animal entry
 router.delete('/:animal', auth.required, function(req, res, next) {
   User.findById(req.payload.id).then(function() {
     if(req.animal.createdBy._id.toString() === req.payload.id.toString()) {

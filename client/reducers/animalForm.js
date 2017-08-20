@@ -12,6 +12,7 @@ export default (state ={}, action) => {
         bloodType: action.payload ? action.payload.animal.bloodType : '',
         contactName: action.payload ? action.payload.animal.contactName : '',
         contactNumber: action.payload ? action.payload.animal.contactNumber : '',
+        contactEmail: action.payload ? action.payload.animal.contactEmail : '',
         vetName: action.payload ? action.payload.animal.vetName : '',
         location: action.payload ? action.payload.animal.location : '',
       }
