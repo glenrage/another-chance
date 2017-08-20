@@ -27,8 +27,8 @@ const AnimalFeed = props => {
       props.animal.filter(el => `${el.name} ${el.type} ${el.breed} ${el.bloodType} ${el.location}`.toUpperCase().indexOf(props.searchTerm.toUpperCase()) >= 0)
       .map((animal, index) => {
         return (
-          <div className="col-md-3 col-sm-4" key={index}>
-            <div className="animal-block clearfix">
+          <div className="col-sm-3 col-sm-3" key={index}>
+            <div className="animal-block">
 
               <p className="animal-title"><strong> {animal.name} </strong></p>
               <p className="animal-list"><strong>Tipo:</strong> {animal.type}</p>
@@ -36,10 +36,10 @@ const AnimalFeed = props => {
               <p className="animal-list"><strong>Peso:</strong> {animal.weight}</p>
               <p className="animal-list"><strong>Años:</strong> {animal.age}</p>
               <p className="animal-list"><strong>Tipo de Sangre:</strong> {animal.bloodType}</p>
-              <p className="animal-list"><strong>Nombre de Contacto:</strong> {animal.contactName}</p>
-              <p className="animal-list"><strong>Número de Contacto:</strong> {animal.contactNumber}</p>
-              <p className="animal-list"><strong>Email de Contacto:</strong> {animal.contactEmail}</p>
-              <p className="animal-list"><strong>Nombre Veterinario:</strong> {animal.vetName}</p>
+              <p className="animal-list"><strong>Contacto:</strong> {animal.contactName}</p>
+              <p className="animal-list"><strong>Número :</strong> {animal.contactNumber}</p>
+              <p className="animal-list"><strong>Email :</strong> {animal.contactEmail}</p>
+              <p className="animal-list"><strong>Veterinario:</strong> {animal.vetName}</p>
               <p className="animal-list"><strong>Localización:</strong> {animal.location}</p>
               <p className="animal-list"><strong>Creado por:</strong> {animal.createdBy.firstName}</p>
 
