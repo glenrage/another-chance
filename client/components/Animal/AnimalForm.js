@@ -1,5 +1,5 @@
-import React from 'react';
 import { connect } from 'react-redux';
+import React from 'react';
 import agent from '../../agent';
 import ListErrors from '../ListErrors';
 
@@ -8,22 +8,17 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: payload =>
-    dispatch({ type: 'ANIMALFORM_LOADED', payload }),
-  onSubmit: payload =>
-    dispatch({ type: 'ANIMALFORM_SUBMITTED', payload }),
-  onUnload: payload =>
-    dispatch({ type: 'ANIMALFORM_UNLOADED', payload }),
-  onUpdateField: (key, value) =>
-    dispatch({ type: 'UPDATE_FIELD_ANIMALFORM', key, value }),
+  onLoad: payload => dispatch({ type: 'ANIMALFORM_LOADED', payload }),
+  onSubmit: payload => dispatch({ type: 'ANIMALFORM_SUBMITTED', payload }),
+  onUnload: payload => dispatch({ type: 'ANIMALFORM_UNLOADED', payload }),
+  onUpdateField: (key, value) => dispatch({ type: 'UPDATE_FIELD_ANIMALFORM', key, value }),
 });
 
 class AnimalForm extends React.Component {
   constructor() {
     super();
 
-    const updateFieldEvent =
-    key => ev => this.props.onUpdateField(key, ev.target.value);
+    const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
     this.changeName = updateFieldEvent('name');
     this.changeType = updateFieldEvent('type');
     this.changeBreed = updateFieldEvent('breed');
@@ -49,12 +44,13 @@ class AnimalForm extends React.Component {
         contactNumber: this.props.contactNumber,
         contactEmail: this.props.contactEmail,
         vetName: this.props.vetName,
-        location: this.props.location
+        location: this.props.location,
       };
+      console.log(animal);
       const slug = { slug: this.props.animalSlug };
-      const promise = this.props.animalSlug ?
-        agent.Animals.update(Object.assign(animal, slug)) :
-        agent.Animals.create(animal);
+      const promise = this.props.animalSlug
+        ? agent.Animals.update(Object.assign(animal, slug))
+        : agent.Animals.create(animal);
 
       this.props.onSubmit(promise);
     };
@@ -68,13 +64,6 @@ class AnimalForm extends React.Component {
  * the Editor component if you navigate to '/editor' from '/editor/slug'.
  * To work around this, we need the `componentWillReceiveProps()` hook.
  */
- componentWillMount() {
-    if (this.props.params.slug) {
-      return this.props.onLoad(agent.Animals.get(this.props.params.slug));
-    }
-    this.props.onLoad(null);
-  }
-
   componentWillReceiveProps(nextProps) {
     if (this.props.params.slug !== nextProps.params.slug) {
       if (nextProps.params.slug) {
@@ -85,6 +74,12 @@ class AnimalForm extends React.Component {
     }
   }
 
+  componentWillMount() {
+    if (this.props.params.slug) {
+      return this.props.onLoad(agent.Animals.get(this.props.params.slug));
+    }
+    this.props.onLoad(null);
+  }
 
   componentWillUnmount() {
     this.props.onUnload();
@@ -98,7 +93,7 @@ class AnimalForm extends React.Component {
             <div className="col-md-10 offset-md-1 col-xs-12">
               <h1> Nuevo Animal </h1>
               <hr />
-              <ListErrors errors={this.props.errors}></ListErrors>
+              <ListErrors errors={this.props.errors} />
 
               <h3>Información del Animal</h3>
               <form>
@@ -114,7 +109,6 @@ class AnimalForm extends React.Component {
                     />
                   </fieldset>
                   <b>Tipo</b> <i>Gato o perro</i>
-
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
@@ -154,7 +148,6 @@ class AnimalForm extends React.Component {
                       onChange={this.changeWeight}
                     />
                   </fieldset>
-
                   <b>Tipo de Sangre</b> <i>Escribir “desconocido” si no lo sabe</i>
                   <fieldset className="form-group">
                     <select
@@ -230,19 +223,16 @@ class AnimalForm extends React.Component {
                       onChange={this.changeLocation}
                     />
                   </fieldset>
-
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}
                   >
-                    Enviar
+										Enviar
                   </button>
-
                 </fieldset>
               </form>
-
             </div>
           </div>
         </div>

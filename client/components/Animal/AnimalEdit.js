@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import agent from '../../agent';
 
 const mapDispatchToProps = dispatch => ({
-  onClickDelete: payload => dispatch({ type: 'DELETE_ANIMAL', payload })
+  onClickDelete: payload => dispatch({ type: 'DELETE_ANIMAL', payload }),
 });
 
 const AnimalEdit = (props) => {
   const animal = props.animal;
   const del = () => {
-    props.onClickDelete(agent.Animals.del(animal.slug))
+    props.onClickDelete(agent.Animals.del(animal.slug));
   };
 
   return (

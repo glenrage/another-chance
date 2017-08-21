@@ -1,21 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ListErrors from './ListErrors';
 import agent from '../agent';
-import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  ...state.auth
+  ...state.auth,
 });
 
 const mapDispatchToProps = dispatch => ({
   onChangeEmail: value =>
-    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'email', value}),
+    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'email', value }),
   onChangePassword: value =>
-    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'password', value}),
+    dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'password', value }),
   onSubmit: (email, password) =>
-    dispatch({ type: 'LOGIN', payload: agent.Auth.login(email, password)}),
+    dispatch({ type: 'LOGIN', payload: agent.Auth.login(email, password) }),
   onUnload: () =>
-    dispatch({ type: 'LOGIN_PAGE_UNLOADED' })
+    dispatch({ type: 'LOGIN_PAGE_UNLOADED' }),
 });
 
 class Login extends React.Component {
@@ -24,11 +24,10 @@ class Login extends React.Component {
 
     this.changeEmail = event => this.props.onChangeEmail(event.target.value);
     this.changePassword = event => this.props.onChangePassword(event.target.value);
-    this.submitForm = (email, password) => event => {
+    this.submitForm = (email, password) => (event) => {
       event.preventDefault();
-      this.props.onSubmit(email, password)
+      this.props.onSubmit(email, password);
     };
-
   }
   componentWillUnmount() {
     this.props.onUnload();
@@ -62,7 +61,7 @@ class Login extends React.Component {
                       placeholder="Correo Electrónico"
                       value={email}
                       onChange={this.changeEmail}
-                      />
+                    />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -72,14 +71,14 @@ class Login extends React.Component {
                       placeholder="Contraseña"
                       value={password}
                       onChange={this.changePassword}
-                      />
+                    />
                   </fieldset>
 
                   <button
                     className="btn btn-lg btn-primary pull-xs-right"
                     type="submit"
                     disabled={this.props.inProgress}
-                    >
+                  >
                     Iniciar Sesión
                   </button>
 

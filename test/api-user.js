@@ -1,4 +1,4 @@
-'use strict';
+
 
 const expect = require('chai').expect;
 const superagent = require('superagent');
@@ -7,19 +7,17 @@ const superagent = require('superagent');
 // // const server = require('../app.js');
 //
 // // const cleanDB = require('./lib/clean-db.js');
-const url = `http://localhost:3000}`;
+const url = 'http://localhost:3000}';
 
-describe('testing api/user route', function() {
-  //start the server
+describe('testing api/user route', () => {
+  // start the server
   // before(done => serverCtrl.serverUp(server, done));
-  //stop the server
+  // stop the server
   // after(done => serverCtrl.serverDown(server, done));
-  //flush database before each describe block
+  // flush database before each describe block
   describe('#GET ', () => {
-    it('should respond with a 200 status', done => {
-      superagent.get(`${url}/`)
-      .send()
-      .end((err, res) => {
+    it('should respond with a 200 status', (done) => {
+      superagent.get(`${url}/`).send().end((err, res) => {
         expect(res.staus).to.equal(200);
       });
       done();

@@ -41,15 +41,15 @@ class Animal extends React.Component {
     }
 
     return (
-
       <div className="animal-page">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
               <h3>Donantes de animales</h3>
-              <p>Escriba una palabra clave de búsqueda a continuación.
-                Usted puede buscar el nombre del animal, ubicación,
-                tipo de sangre, raza animal o tipo de animal.</p>
+              <p>
+								Escriba una palabra clave de búsqueda a continuación. Usted puede buscar el nombre
+								del animal, ubicación, tipo de sangre, raza animal o tipo de animal.
+              </p>
               <form className="form-inline">
                 <b>Buscar</b>
                 <input
