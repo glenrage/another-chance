@@ -8,6 +8,14 @@ const API_ROOT = 'https://another-chance.herokuapp.com/api';
 
 const responseBody = res => res.body;
 
+let token = null;
+
+const tokenPlugin = (req) => {
+  if (token) {
+    req.set('Authorization', `Token ${token}`);
+  }
+};
+
 const requests = {
   get: url =>
     superagent.get(`${API_ROOT}${url}`).use(tokenPlugin).then(responseBody),
@@ -16,12 +24,12 @@ const requests = {
   put: (url, body) =>
     superagent.put(`${API_ROOT}${url}`, body).use(tokenPlugin).then(responseBody),
   del: url =>
-    superagent.del(`${API_ROOT}${url}`).use(tokenPlugin).then(responseBody)
+    superagent.del(`${API_ROOT}${url}`).use(tokenPlugin).then(responseBody),
 };
 
 const Animals = {
-  all: page =>
-    requests.get(`/animals?limit=10`),
+  all: () =>
+    requests.get('/animals?limit=10'),
   del: slug =>
     requests.del(`/animals/${slug}`),
   get: slug =>
@@ -29,31 +37,23 @@ const Animals = {
   update: animal =>
     requests.put(`/animals/${animal.slug}`, { animal: omitSlug(animal) }),
   create: animal =>
-    requests.post(`/animals`, { animal })
+    requests.post('/animals', { animal }),
 
 };
-
-let token = null
-
-let tokenPlugin = req => {
-  if(token) {
-    req.set('Authorization', `Token ${token}`)
-  }
-}
 
 const Auth = {
   current: () =>
     requests.get('/user'),
   login: (email, password) =>
-    requests.post('/users/login', { user: { email, password }}),
+    requests.post('/users/login', { user: { email, password } }),
   register: (firstName, lastName, company, position, phoneNumber, email, password, secret) =>
     requests.post('/users', { user: { firstName, lastName, company, position, phoneNumber, email, password, secret } }),
   save: user =>
-    requests.put('/user', { user })
+    requests.put('/user', { user }),
 };
 
 export default {
   Animals,
   Auth,
-  setToken: _token => { token = _token; }
+  setToken: (_token) => { token = _token; },
 };
