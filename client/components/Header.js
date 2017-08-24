@@ -1,66 +1,65 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router';
 
-const LoggedOutView = (props) => {
+const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
       <ul className="nav navbar-nav navbar-right">
         <li className="nav-item">
           <Link to="/" className="nav-link">
-            <i className="fa fa-paw" />
+            <i className="fa fa-paw"></i>
             Casa
           </Link>
         </li>
 
         <li className="nav-item">
           <Link to="login" className="nav-link">
-            <i className="fa fa-sign-in" aria-hidden="true" />
+            <i className="fa fa-sign-in" aria-hidden="true"></i>
             Iniciar Sesión
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="register" className="nav-link">
-            <i className="fa fa-user-plus" aria-hidden="true" />
+        <Link to="register" className="nav-link">
+          <i className="fa fa-user-plus" aria-hidden="true"></i>
           Registrar
-          </Link>
-        </li>
+        </Link>
+      </li>
       </ul>
     );
   }
   return null;
-};
+}
 
-const LoggedInView = (props) => {
+const LoggedInView = props => {
   if (props.currentUser) {
     return (
       <ul className="nav navbar-nav navbar-right">
 
         <li className="nav-item">
           <Link to="/" className="nav-link">
-            <i className="fa fa-paw" />
+          <i className="fa fa-paw"></i>
             Casa
           </Link>
         </li>
 
         <li className="nav-item">
           <Link to="animalform" className="nav-link">
-            <i className="fa fa-plus" />Nuevo Animal
+            <i className="fa fa-plus"></i>Nuevo Animal
           </Link>
         </li>
 
         <li className="nav-item">
           <Link to="animals" className="nav-link">
-            <i className="fa fa-search" />Animals
+            <i className="fa fa-search"></i>Animals
           </Link>
         </li>
 
         <li className="nav-item">
           <Link
             to="settings"
-            className="nav-link"
-          >
-            <i className="fa fa-user-circle-o" aria-hidden="true" />
+            className="nav-link">
+            <i className="fa fa-user-circle-o" aria-hidden="true"></i>
             {props.currentUser.firstName}
           </Link>
         </li>
@@ -74,23 +73,24 @@ const LoggedInView = (props) => {
 
 class Header extends React.Component {
   render() {
-    return (
 
-      <nav className="navbar navbar-full">
-        <Link to="/" className="navbar-brand">
-          <img id="nav-img" src="/assets/images/logo.jpg" alt="Logo" />
-        </Link>
+    return(
 
-        <LoggedOutView currentUser={this.props.currentUser} />
+        <nav className="navbar navbar-full">
+         <Link to="/" className="navbar-brand">
+            <img id="nav-img" src="/assets/images/logo.jpg" alt="Logo" />
+         </Link>
 
-        <LoggedInView currentUser={this.props.currentUser} />
+         <LoggedOutView currentUser={this.props.currentUser} />
 
-
-      </nav>
+         <LoggedInView currentUser={this.props.currentUser} />
 
 
-    );
+     </nav>
+
+
+    )
   }
 }
 
-export default Header;
+export default Header

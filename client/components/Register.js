@@ -1,8 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router';
-import { connect } from 'react-redux';
 import ListErrors from './ListErrors';
+import React from 'react';
 import agent from '../agent';
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({ ...state.auth });
 
@@ -24,10 +24,9 @@ const mapDispatchToProps = dispatch => ({
   onChangeSecret: value =>
     dispatch({ type: 'UPDATE_FIELD_AUTH', key: 'secret', value }),
   onSubmit: (firstName, lastName, company, position, phoneNumber, email, password, secret) => {
-    const payload = agent.Auth.register(firstName, lastName, company,
-      position, phoneNumber, email, password, secret);
-    dispatch({ type: 'REGISTER', payload });
-  },
+    const payload = agent.Auth.register(firstName, lastName,company, position, phoneNumber, email, password, secret);
+    dispatch({ type: 'REGISTER', payload })
+  }
 });
 
 class Register extends React.Component {
@@ -41,12 +40,12 @@ class Register extends React.Component {
     this.changePosition = event => this.props.onChangePosition(event.target.value);
     this.changePhoneNumber = event => this.props.onChangePhoneNumber(event.target.value);
     this.changeSecret = event => this.props.onChangeSecret(event.target.value);
-    this.submitForm = (firstName, lastName, company, position,
-      phoneNumber, email, password, secret) => (event) => {
+    this.submitForm = (firstName, lastName, company, position, phoneNumber, email, password, secret) => event => {
+      console.log(event)
+      console.log(this.props)
       event.preventDefault();
-      this.props.onSubmit(firstName, lastName, company,
-        position, phoneNumber, email, password, secret);
-    };
+      this.props.onSubmit(firstName, lastName, company, position, phoneNumber, email, password, secret);
+    }
   }
 
   render() {
@@ -74,10 +73,7 @@ class Register extends React.Component {
 
               <ListErrors errors={this.props.errors} />
 
-              <form
-                onSubmit={this.submitForm(firstName, lastName, company,
-                  position, phoneNumber, email, password, secret)}
-              >
+              <form onSubmit={this.submitForm(firstName, lastName, company, position, phoneNumber, email, password, secret)}>
                 <fieldset>
 
                   <fieldset className="form-group">
@@ -86,8 +82,7 @@ class Register extends React.Component {
                       type="text"
                       placeholder="Nombre De Pila"
                       value={this.props.firstName}
-                      onChange={this.changeFirstName}
-                    />
+                      onChange={this.changeFirstName} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -96,8 +91,7 @@ class Register extends React.Component {
                       type="text"
                       placeholder="Apellido"
                       value={this.props.lastName}
-                      onChange={this.changeLastName}
-                    />
+                      onChange={this.changeLastName} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -106,8 +100,7 @@ class Register extends React.Component {
                       type="text"
                       placeholder="Empresa"
                       value={this.props.company}
-                      onChange={this.changeCompany}
-                    />
+                      onChange={this.changeCompany} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -116,8 +109,7 @@ class Register extends React.Component {
                       type="text"
                       placeholder="Posición"
                       value={this.props.position}
-                      onChange={this.changePosition}
-                    />
+                      onChange={this.changePosition} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -126,8 +118,7 @@ class Register extends React.Component {
                       type="text"
                       placeholder="Número de Teléfono"
                       value={this.props.phoneNumber}
-                      onChange={this.changePhoneNumber}
-                    />
+                      onChange={this.changePhoneNumber} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -136,8 +127,7 @@ class Register extends React.Component {
                       type="email"
                       placeholder="Correo Electrónico"
                       value={this.props.email}
-                      onChange={this.changeEmail}
-                    />
+                      onChange={this.changeEmail} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -146,8 +136,7 @@ class Register extends React.Component {
                       type="password"
                       placeholder="Contraseña"
                       value={this.props.password}
-                      onChange={this.changePassword}
-                    />
+                      onChange={this.changePassword} />
                   </fieldset>
 
                   <fieldset className="form-group">
@@ -156,15 +145,13 @@ class Register extends React.Component {
                       type="text"
                       placeholder="Palabra de acceso Secreto"
                       value={this.props.secret}
-                      onChange={this.changeSecret}
-                    />
+                      onChange={this.changeSecret} />
                   </fieldset>
 
                   <button
                     className="btn btn-lg btn-primary pull-xs-right"
                     type="submit"
-                    disabled={this.props.inProgress}
-                  >
+                    disabled={this.props.inProgress}>
                     Registrar
                   </button>
 
