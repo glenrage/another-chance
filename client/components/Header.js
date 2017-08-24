@@ -72,7 +72,7 @@ class Header extends React.Component {
 		return (
 			<nav className="navbar navbar-full">
 				<Link to="/" className="navbar-brand">
-					Colitas Por La Vida
+					<i className="fa fa-heartbeat" />Colitas Por La Vida
 				</Link>
 
 				<LoggedOutView currentUser={this.props.currentUser} />

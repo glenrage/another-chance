@@ -38,6 +38,10 @@ h6 {
 	font-weight: bold;
 }
 
+.navbar-brand i {
+	color: #b93333;
+}
+
 #banner {
 	background: url(./../images/newsplash2.jpg) no-repeat center center;
 	-webkit-background-size: cover;
