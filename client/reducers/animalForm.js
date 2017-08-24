@@ -1,4 +1,4 @@
-export default (state = {}, action) => {
+export default (state ={}, action) => {
   switch (action.type) {
     case 'ANIMALFORM_LOADED':
       return {
@@ -15,14 +15,14 @@ export default (state = {}, action) => {
         contactEmail: action.payload ? action.payload.animal.contactEmail : '',
         vetName: action.payload ? action.payload.animal.vetName : '',
         location: action.payload ? action.payload.animal.location : '',
-      };
+      }
     case 'ANIMALFORM_UNLOADED':
       return {};
     case 'ANIMALFORM_SUBMITTED':
       return {
         ...state,
         inProgress: null,
-        errors: action.error ? action.payload.errors : null,
+        errors: action.error ? action.payload.errors : null
       };
     case 'ASYNC_START':
       if (action.subtype === 'ANIMALFORM_SUBMITTED') {
@@ -34,4 +34,4 @@ export default (state = {}, action) => {
   }
 
   return state;
-};
+}

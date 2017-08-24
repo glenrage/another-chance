@@ -6,19 +6,21 @@ export default (state = {}, action) => {
       return {
         ...state,
         animals: action.payload.animals,
-        searchTerm: '',
+        searchTerm: ''
+
       };
+      break;
     case 'ANIMAL_PAGE_UNLOADED':
       return {};
     case 'UPDATE_SEARCH_TERM':
       return {
         ...state,
-        searchTerm: action.value,
+        searchTerm: action.value
       };
     case 'SET_SEARCH_TERM':
       return {
         ...state,
-        searchInput: action.value,
+        searchInput: action.value
       };
   }
   return state;
