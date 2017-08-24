@@ -4,13 +4,13 @@ export default (state = {}, action) => {
       return {
         ...state,
         inProgress: false,
-        errors: action.error ? action.payload.errors : null,
+        errors: action.error ? action.payload.errors : null
       };
     case 'ASYNC_START':
       return {
         ...state,
-        inProgres: true,
-      };
+        inProgres: true
+      }
   }
   return state;
-};
+}

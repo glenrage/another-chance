@@ -1,37 +1,42 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import agent from '../../agent';
 import ListErrors from '../ListErrors';
+import React from 'react';
+import agent from '../../agent';
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  ...state.animalForm,
-});
+  ...state.animalForm
+})
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: payload => dispatch({ type: 'ANIMALFORM_LOADED', payload }),
-  onSubmit: payload => dispatch({ type: 'ANIMALFORM_SUBMITTED', payload }),
-  onUnload: payload => dispatch({ type: 'ANIMALFORM_UNLOADED', payload }),
-  onUpdateField: (key, value) => dispatch({ type: 'UPDATE_FIELD_ANIMALFORM', key, value }),
+  onLoad: payload =>
+    dispatch({ type: 'ANIMALFORM_LOADED', payload }),
+  onSubmit: payload =>
+    dispatch({ type: 'ANIMALFORM_SUBMITTED', payload }),
+  onUnload: payload =>
+    dispatch({ type: 'ANIMALFORM_UNLOADED', payload }),
+  onUpdateField: (key, value) =>
+    dispatch({ type: 'UPDATE_FIELD_ANIMALFORM', key, value })
 });
 
 class AnimalForm extends React.Component {
-  constructor() {
+  constructor(){
     super();
 
-    const updateFieldEvent = key => ev => this.props.onUpdateField(key, ev.target.value);
-    this.changeName = updateFieldEvent('name');
-    this.changeType = updateFieldEvent('type');
-    this.changeBreed = updateFieldEvent('breed');
-    this.changeWeight = updateFieldEvent('weight');
-    this.changeAge = updateFieldEvent('age');
-    this.changeBloodType = updateFieldEvent('bloodType');
-    this.changeContactName = updateFieldEvent('contactName');
-    this.changeContactNumber = updateFieldEvent('contactNumber');
-    this.changeContactEmail = updateFieldEvent('contactEmail');
-    this.changeVetName = updateFieldEvent('vetName');
-    this.changeLocation = updateFieldEvent('location');
+    const updateFieldEvent =
+      key => ev => this.props.onUpdateField(key, ev.target.value);
+      this.changeName = updateFieldEvent('name');
+      this.changeType = updateFieldEvent('type');
+      this.changeBreed = updateFieldEvent('breed');
+      this.changeWeight = updateFieldEvent('weight');
+      this.changeAge = updateFieldEvent('age');
+      this.changeBloodType = updateFieldEvent('bloodType');
+      this.changeContactName = updateFieldEvent('contactName');
+      this.changeContactNumber = updateFieldEvent('contactNumber');
+      this.changeContactEmail = updateFieldEvent('contactEmail');
+      this.changeVetName = updateFieldEvent('vetName');
+      this.changeLocation = updateFieldEvent('location');
 
-    this.submitForm = (ev) => {
+    this.submitForm = ev => {
       ev.preventDefault();
       const animal = {
         name: this.props.name,
@@ -44,13 +49,13 @@ class AnimalForm extends React.Component {
         contactNumber: this.props.contactNumber,
         contactEmail: this.props.contactEmail,
         vetName: this.props.vetName,
-        location: this.props.location,
+        location: this.props.location
       };
-      console.log(animal);
+      console.log(animal)
       const slug = { slug: this.props.animalSlug };
-      const promise = this.props.animalSlug
-        ? agent.Animals.update(Object.assign(animal, slug))
-        : agent.Animals.create(animal);
+      const promise = this.props.animalSlug ?
+        agent.Animals.update(Object.assign(animal, slug)) :
+        agent.Animals.create(animal);
 
       this.props.onSubmit(promise);
     };
@@ -64,20 +69,21 @@ class AnimalForm extends React.Component {
  * the Editor component if you navigate to '/editor' from '/editor/slug'.
  * To work around this, we need the `componentWillReceiveProps()` hook.
  */
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.slug !== nextProps.params.slug) {
+      if (nextProps.params.slug) {
+       this.props.onUnload();
+       return this.props.onLoad(agent.Animals.get(this.props.params.slug));
+      }
+      this.props.onLoad(null);
+    }
+  }
+
   componentWillMount() {
     if (this.props.params.slug) {
       return this.props.onLoad(agent.Animals.get(this.props.params.slug));
     }
     this.props.onLoad(null);
-  }
-  componentWillReceiveProps(nextProps) {
-    if (this.props.params.slug !== nextProps.params.slug) {
-      if (nextProps.params.slug) {
-        this.props.onUnload();
-        return this.props.onLoad(agent.Animals.get(this.props.params.slug));
-      }
-      this.props.onLoad(null);
-    }
   }
 
   componentWillUnmount() {
@@ -91,8 +97,8 @@ class AnimalForm extends React.Component {
           <div className="row">
             <div className="col-md-10 offset-md-1 col-xs-12">
               <h1> Nuevo Animal </h1>
-              <hr />
-              <ListErrors errors={this.props.errors} />
+              <hr/>
+              <ListErrors errors={this.props.errors}></ListErrors>
 
               <h3>Información del Animal</h3>
               <form>
@@ -104,18 +110,17 @@ class AnimalForm extends React.Component {
                       type="text"
                       placeholder="Nombre"
                       value={this.props.name}
-                      onChange={this.changeName}
-                    />
+                      onChange={this.changeName} />
                   </fieldset>
                   <b>Tipo</b> <i>Gato o perro</i>
+
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Tipo"
                       value={this.props.type}
-                      onChange={this.changeType}
-                    />
+                      onChange={this.changeType} />
                   </fieldset>
                   <b>Raza</b>
                   <fieldset className="form-group">
@@ -124,8 +129,7 @@ class AnimalForm extends React.Component {
                       type="text"
                       placeholder="Raza"
                       value={this.props.breed}
-                      onChange={this.changeBreed}
-                    />
+                      onChange={this.changeBreed} />
                   </fieldset>
                   <b>Edad</b> <i>Usar años</i>
                   <fieldset className="form-group">
@@ -134,26 +138,21 @@ class AnimalForm extends React.Component {
                       type="text"
                       placeholder="Edad"
                       value={this.props.age}
-                      onChange={this.changeAge}
-                    />
-                  </fieldset>
-                  <b>Peso</b> <i>Usar Libras</i>
+                      onChange={this.changeAge} />
+                    </fieldset>
+                    <b>Peso</b> <i>Usar kilogramo</i> (Apellidos, Nombre)
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Peso"
                       value={this.props.weight}
-                      onChange={this.changeWeight}
-                    />
+                      onChange={this.changeWeight} />
                   </fieldset>
+
                   <b>Tipo de Sangre</b> <i>Escribir “desconocido” si no lo sabe</i>
                   <fieldset className="form-group">
-                    <select
-                      className="form-control"
-                      name="bloodType"
-                      onChange={this.changeBloodType}
-                    >
+                    <select className="form-control" name="bloodType" onChange={this.changeBloodType}>
                       <option value="Desconocido">Desconocido</option>
                       <option value="DEA 1.1">DEA 1.1</option>
                       <option value="DEA 1.2">DEA 1.2</option>
@@ -170,27 +169,25 @@ class AnimalForm extends React.Component {
                       <option value="B">B (Gato)</option>
                       <option value="AB">AB (Gato)</option>
                     </select>
-                  </fieldset>
-                  <h3>Información de Contacto</h3>
-                  <b>Nombre del contacto</b> <i>Apellidos, Nombre</i>
+                </fieldset>
+                <h3>Información de Contacto</h3>
+                <b>Nombre del contacto</b> <i>Apellidos, Nombre</i>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Nombre completo"
                       value={this.props.contactName}
-                      onChange={this.changeContactName}
-                    />
+                      onChange={this.changeContactName} />
                   </fieldset>
-                  <b>Teléfono</b> <i>(111)-111-1111</i>
+                  <b>Teléfono</b> <i>(787)-298-7669</i>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Teléfono"
                       value={this.props.contactNumber}
-                      onChange={this.changeContactNumber}
-                    />
+                      onChange={this.changeContactNumber} />
                   </fieldset>
                   <b>Email</b>
                   <fieldset className="form-group">
@@ -199,18 +196,16 @@ class AnimalForm extends React.Component {
                       type="text"
                       placeholder="Email"
                       value={this.props.contactEmail}
-                      onChange={this.changeContactEmail}
-                    />
+                      onChange={this.changeContactEmail} />
                   </fieldset>
-                  <b>Nombre del Veterinario</b> <i>Apellidos, Nombre</i>
+                  <b>Nombre del Veterinario</b>
                   <fieldset className="form-group">
                     <input
                       className="form-control form-control-md"
                       type="text"
                       placeholder="Nombre del Veterinario"
                       value={this.props.vetName}
-                      onChange={this.changeVetName}
-                    />
+                      onChange={this.changeVetName} />
                   </fieldset>
                   <b>Pueblo o ciudad</b>
                   <fieldset className="form-group">
@@ -219,19 +214,20 @@ class AnimalForm extends React.Component {
                       type="text"
                       placeholder="Pueblo o ciudad"
                       value={this.props.location}
-                      onChange={this.changeLocation}
-                    />
+                      onChange={this.changeLocation} />
                   </fieldset>
+
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
                     disabled={this.props.inProgress}
-                    onClick={this.submitForm}
-                  >
-										Enviar
+                    onClick={this.submitForm}>
+                    Enviar
                   </button>
+
                 </fieldset>
               </form>
+
             </div>
           </div>
         </div>
