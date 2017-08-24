@@ -10,7 +10,7 @@ Another chance is an application for Veterinarians to store and manage animal bl
 
  *Still under development*
 
-Deployed beta version URL - https://another-chance.herokuapp.com/
+Deployed beta version URL - http://www.colitasporlavida.com/
 
 Man hours spent - https://wakatime.com/project/another-chance
 
