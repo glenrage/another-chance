@@ -1,171 +1,152 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
 p {
-  font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Roboto", sans-serif;
 }
 
 .gallery-img img {
-  -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
-  margin-bottom: 20px;
-  display: inline-block;
-  height: 50%;
-  width: 50%;
-  margin-left: 20px;
+	-webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
+	margin-bottom: 20px;
+	display: inline-block;
+	height: 50%;
+	width: 50%;
+	margin-left: 20px;
 }
-
 
 /* Navbar*/
 
 .navbar {
-  background-color: #2d2c2c;
-  padding: .5rem;
-  color: #c4c4c4;
-  margin-bottom: -5px;
+	background-color: #2d2c2c;
+	padding: .5rem;
+	color: #c4c4c4;
+	margin-bottom: -5px;
 }
 
-#nav-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 5%;
-  object-fit: cover;
+.navbar-brand {
+	font-family: "Roboto", sans-serif;
+	color: white;
+	font-weight: bold;
 }
 
 #banner {
-  background: url(./../images/splash.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 90vh;
-  /*width: 90vh;*/
-  margin: auto -30px auto -30px;
+	background: url(./../images/newsplash2.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+	/*margin: auto -30px auto -30px;*/
 }
-
 
 /*About Us*/
 
 #about-us {
-  width: 100%;
+	width: 100%;
+	font-size: 1.2em;
 }
 
 #gg-map {
-  max-width: 100%;
-  margin: 30px;
+	max-width: 100%;
+	margin: 30px;
 }
 
 .animal-page {
-  margin-top: 50px;
+	margin-top: 50px;
 }
 
 .animal-form-page {
-  margin-top: 75px;
-  margin-bottom: 5px;
+	margin-top: 75px;
+	margin-bottom: 5px;
+	font-size: 1.2em;
 }
 
 .settings-page {
-  margin-top: 50px;
-  margin-bottom: 5px;
+	margin-top: 50px;
+	margin-bottom: 5px;
 }
 
 .btn {
-  margin: 3px;
+	margin: 3px;
 }
 
 .auth-page {
-  margin-top: 50px;
+	margin-top: 50px;
 }
 
-
 #search-input {
-  padding:5px;
-  margin: 5px;
+	padding: 5px;
+	margin: 5px;
 }
 
 .highlight {
-  color:blue;
-  background-color: red;
+	color: blue;
+	background-color: red;
 }
-
 
 .animal-block {
-  margin: 15px auto;
-  padding: 20px;
-  background-color: #dddddd;
-  border: 7px double white;
-  border-radius: 5px;
-  height: 300px;
-  overflow-y: scroll;
+	margin: 15px auto;
+	padding: 20px;
+	background-color: #dddddd;
+	border-radius: 5px;
+	height: 300px;
+	overflow-y: scroll;
 }
 
-.animal-block p{
-  line-height: 90%;
-  /*line-height: inherit;*/
+.animal-block p {
+	line-height: 95%;
+	/*line-height: inherit;*/
 }
-
 
 .animal-block button {
-  margin: 5px;
+	margin: 5px;
 }
 
 .animal-title {
-  font-size: 140%;
-  text-transform: capitalize;
+	font-size: 140%;
+	text-transform: capitalize;
 }
 
 .animal-list {
-  font-size: 100%;
-  text-transform: capitalize;
+	font-size: 100%;
+	text-transform: capitalize;
 }
 
 .animal-photo {
-  width: 200px;
-  height: 200px;
+	width: 200px;
+	height: 200px;
 }
-
 
 /*Footer*/
 
 .footer {
-  text-align: center;
-  padding-top: 1%;
-  background-color: #2d2c2c;
-  padding-right: 30px;
-  color: #c4c4c4;
+	text-align: center;
+	padding-top: 1%;
+	background-color: #2d2c2c;
+	padding-right: 30px;
+	color: #c4c4c4;
 }
 
-.footer p, .footer img {
-  display: inline-block;
+.footer p,
+.footer img {
+	display: inline-block;
 }
 
 .footer p {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 @media screen and (max-width: 600px) {
-  #shelter-container div.dropdown, #admin-container div.dropdown {
-    float: right;
-    margin-top: -35px;
-    margin-right: 60px;
-  }
 }
 
 @media screen and (max-width: 500px) {
-  .manage-people-block .people-image-section, .manage-people-block .people-info-section {
-    width: 100%;
-  }
-  #shelter-container .nav-tabs>li>a, #admin-container .nav-tabs>li>a {
-    height: 35px;
-    line-height: 1;
-    font-size: 80%;
-  }
-  #shelter-container .nav-tabs>li, #admin-container .nav-tabs>li {
-    width: 100%;
-  }
 }
