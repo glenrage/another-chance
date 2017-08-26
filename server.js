@@ -1,13 +1,13 @@
-const http = require('http'),
-	path = require('path'),
-	methods = require('methods'),
-	express = require('express'),
-	bodyParser = require('body-parser'),
-	session = require('express-session'),
-	cors = require('cors'),
-	passport = require('passport'),
-	errorhandler = require('errorhandler'),
-	mongoose = require('mongoose');
+const http = require('http');
+const path = require('path');
+const methods = require('methods');
+const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const cors = require('cors');
+const passport = require('passport');
+const errorhandler = require('errorhandler');
+const mongoose = require('mongoose');
 
 require('dotenv').load();
 
