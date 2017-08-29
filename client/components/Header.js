@@ -50,7 +50,7 @@ const LoggedInView = props => {
 
 				<li className="nav-item">
 					<Link to="animals" className="nav-link">
-						<i className="fa fa-search" />Animals
+						<i className="fa fa-search" />Animales
 					</Link>
 				</li>
 
