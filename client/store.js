@@ -8,12 +8,12 @@ import animal from './reducers/animal';
 import animalForm from './reducers/animalForm';
 
 const reducer = combineReducers({
-	auth,
-	animal,
-	animalForm,
-	common,
-	home,
-	settings
+  auth,
+  animal,
+  animalForm,
+  common,
+  home,
+  settings
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
