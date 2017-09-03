@@ -17,11 +17,12 @@ describe('testing api/user route', function() {
   //flush database before each describe block
   describe('#GET ', () => {
     it('should respond with a 200 status', done => {
-      superagent.get(`${url}/`)
-      .send()
-      .end((err, res) => {
-        expect(res.staus).to.equal(200);
-      });
+      superagent
+        .get(`${url}/`)
+        .send()
+        .end((err, res) => {
+          expect(res.status).to.equal(200);
+        });
       done();
     });
   });

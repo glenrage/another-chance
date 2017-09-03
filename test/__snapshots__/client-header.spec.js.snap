@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot test 1`] = `
+<nav
+  className="navbar navbar-full"
+>
+  <Link
+    className="navbar-brand"
+    onlyActiveOnIndex={false}
+    style={Object {}}
+    to="/"
+  >
+    <i
+      className="fa fa-heartbeat"
+    />
+    Colitas Por La Vida
+  </Link>
+  <LoggedOutView />
+  <LoggedInView />
+</nav>
+`;
