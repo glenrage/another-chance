@@ -1,7 +1,7 @@
 # Another-chance
 
 [![Build Status](https://travis-ci.org/glenrage/another-chance.svg?branch=master)](https://travis-ci.org/glenrage/another-chance)
-[![Coverage Status](https://coveralls.io/repos/github/glenrage/another-chance/badge.svg?branch=master)](https://coveralls.io/github/glenrage/another-chance?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/glenrage/another-chance/badge.svg?branch=redux2)](https://coveralls.io/github/glenrage/another-chance?branch=redux2)
 [![dependencies Status](https://david-dm.org/expressjs/express/status.svg)](https://david-dm.org/expressjs/express)
 [![devDependencies Status](https://david-dm.org/expressjs/express/dev-status.svg)](https://david-dm.org/expressjs/express?type=dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
