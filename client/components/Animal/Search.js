@@ -19,7 +19,6 @@ class Search extends React.Component {
 
     this.changeSearch = event => this.props.onChangeSearch(event.target.value);
 
-
   }
 
   render(){
