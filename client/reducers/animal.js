@@ -21,6 +21,11 @@ export default (state = {}, action) => {
         ...state,
         searchInput: action.value
       };
+    case 'SEARCH_SUBMIT':
+      return {
+        ...state,
+        searchSubmit: action.value
+      };
   }
   return state;
 };

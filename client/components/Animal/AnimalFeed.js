@@ -1,6 +1,5 @@
 import React from 'react';
 import AnimalEdit from './AnimalEdit';
-const Highlight = require('react-string-highlighter');
 
 const AnimalFeed = props => {
   console.log(props);

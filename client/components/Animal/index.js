@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
   onUnload: () => dispatch({ type: 'ANIMAL_PAGE_UNLOADED' }),
   onChangeSearch: value => dispatch({ type: 'UPDATE_SEARCH_TERM', value }),
   onSelectSearchInput: value => dispatch({ type: 'SET_SEARCH_TERM', value }),
-  onSubmit: value => dispatch({ type: 'SEARCH_SUBMIT', value })
+  onHandleSubmit: value => dispatch({ type: 'SEARCH_SUBMIT', value })
 });
 
 class Animal extends React.Component {
@@ -25,6 +25,12 @@ class Animal extends React.Component {
     super();
 
     this.changeSearch = event => this.props.onChangeSearch(event.target.value);
+    this.handleSubmit = event => {
+      console.log('trigger');
+      console.log(event);
+      event.preventDefault();
+      this.props.onHandleSubmit(event.target.value);
+    };
     this.selectSearchInput = event =>
       this.props.onSelectSearchInput(event.target.value);
   }
@@ -57,7 +63,7 @@ class Animal extends React.Component {
               <strong>
                 No presione” enter” después de entrar el término de búsqueda.
               </strong>
-              <form className="form-inline">
+              <form className="form-inline" onSubmit={this.handleSubmit}>
                 <b>Buscar</b>
                 <input
                   type="text"
@@ -66,6 +72,9 @@ class Animal extends React.Component {
                   value={search}
                   onChange={this.changeSearch}
                 />
+                <button type="submit" className="btn btn-default btn-sm">
+                  Submit
+                </button>
               </form>
             </div>
           </div>
