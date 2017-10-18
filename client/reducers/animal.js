@@ -7,6 +7,7 @@ export default (state = {}, action) => {
         ...state,
         animals: action.payload.animals,
         searchTerm: ''
+        // searchSubmit: ''
       };
       break;
     case 'ANIMAL_PAGE_UNLOADED':
@@ -16,15 +17,10 @@ export default (state = {}, action) => {
         ...state,
         searchTerm: action.value
       };
-    case 'SET_SEARCH_TERM':
-      return {
-        ...state,
-        searchInput: action.value
-      };
     case 'SEARCH_SUBMIT':
       return {
         ...state,
-        searchSubmit: action.value
+        searchTerm: action.value
       };
   }
   return state;

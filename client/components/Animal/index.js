@@ -3,21 +3,17 @@ import { connect } from 'react-redux';
 import agent from '../../agent';
 import AnimalFeed from './AnimalFeed';
 import AnimalEdit from './AnimalEdit';
-// import Search from './Search';
 
 const mapStateToProps = state => ({
   ...state.animal,
   currentUser: state.common.currentUser,
-  searchTerm: state.animal.searchTerm,
-  searchInput: state.animal.searchInput
+  searchTerm: state.animal.searchTerm
 });
 
 const mapDispatchToProps = dispatch => ({
   onLoad: payload => dispatch({ type: 'ANIMAL_PAGE_LOADED', payload }),
   onUnload: () => dispatch({ type: 'ANIMAL_PAGE_UNLOADED' }),
-  onChangeSearch: value => dispatch({ type: 'UPDATE_SEARCH_TERM', value }),
-  onSelectSearchInput: value => dispatch({ type: 'SET_SEARCH_TERM', value }),
-  onHandleSubmit: value => dispatch({ type: 'SEARCH_SUBMIT', value })
+  onChangeSearch: value => dispatch({ type: 'UPDATE_SEARCH_TERM', value })
 });
 
 class Animal extends React.Component {
@@ -25,14 +21,6 @@ class Animal extends React.Component {
     super();
 
     this.changeSearch = event => this.props.onChangeSearch(event.target.value);
-    this.handleSubmit = event => {
-      console.log('trigger');
-      console.log(event);
-      event.preventDefault();
-      this.props.onHandleSubmit(event.target.value);
-    };
-    this.selectSearchInput = event =>
-      this.props.onSelectSearchInput(event.target.value);
   }
 
   componentWillMount() {
@@ -63,7 +51,7 @@ class Animal extends React.Component {
               <strong>
                 No presione” enter” después de entrar el término de búsqueda.
               </strong>
-              <form className="form-inline" onSubmit={this.handleSubmit}>
+              <form className="form-inline">
                 <b>Buscar</b>
                 <input
                   type="text"
@@ -72,9 +60,6 @@ class Animal extends React.Component {
                   value={search}
                   onChange={this.changeSearch}
                 />
-                <button type="submit" className="btn btn-default btn-sm">
-                  Submit
-                </button>
               </form>
             </div>
           </div>
@@ -83,7 +68,6 @@ class Animal extends React.Component {
             <AnimalFeed
               animal={this.props.animals}
               searchTerm={this.props.searchTerm}
-              searchInput={this.props.searchInput}
             />
           </div>
         </div>
