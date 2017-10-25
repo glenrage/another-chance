@@ -69,6 +69,18 @@ router.get('/user', auth.required, function(req, res, next) {
     .catch(next);
 });
 
+//Route to get all users
+router.get('/users', auth.required, function(req, res, next) {
+  User.find({})
+    .then(function(user) {
+      if (!user) {
+        return res.sendStatus(401);
+      }
+      return res.json({ user: user });
+    })
+    .catch(next);
+});
+
 //Route to update user info
 router.put('/user', auth.required, function(req, res, next) {
   User.findById(req.payload.id)

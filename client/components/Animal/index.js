@@ -20,7 +20,10 @@ class Animal extends React.Component {
   constructor() {
     super();
 
-    this.changeSearch = event => this.props.onChangeSearch(event.target.value);
+    this.changeSearch = event => {
+      event.preventDefault();
+      this.props.onChangeSearch(event.target.value);
+    };
   }
 
   componentWillMount() {
@@ -48,9 +51,7 @@ class Animal extends React.Component {
                 puede buscar el nombre del animal, localización, tipo de sangre,
                 raza animal o tipo de animal.
               </p>
-              <strong>
-                No presione” enter” después de entrar el término de búsqueda.
-              </strong>
+
               <form className="form-inline">
                 <b>Buscar</b>
                 <input

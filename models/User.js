@@ -29,7 +29,7 @@ const UserSchema = new mongoose.Schema(
     company: String,
     position: String,
     phoneNumber: String,
-    admin: { type: Boolean, default: true },
+    admin: { type: Boolean, default: false },
     hash: String,
     salt: String
   },
