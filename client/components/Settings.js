@@ -5,12 +5,13 @@ import agent from '../agent';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  ...state.settings,
+  ...state,
+  users: state.settings.users,
   currentUser: state.common.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClickLogout: () => dispatch({ type: 'LOGOUT' }),
+  onLoad: payload => dispatch({ type: 'SETTINGS_PAGE_LOADED', payload }),
   onSubmitForm: user =>
     dispatch({ type: 'SETTINGS_SAVED', payload: agent.Auth.save(user) })
 });
@@ -48,6 +49,8 @@ class SettingsForm extends React.Component {
   }
 
   componentWillMount() {
+    console.log(this.props);
+    // this.props.onLoad(agent.Auth.allUsers());
     if (this.props.currentUser) {
       Object.assign(this.state, {
         firstName: this.props.currentUser.firstName || '',
@@ -170,7 +173,7 @@ class Settings extends React.Component {
       <div className="settings-page">
         <div className="container page">
           <div className="row">
-            <div className="col-md-6 offset-md-3 col-xs-12">
+            <div className="col-sm-8">
               <h1 className="text-xs-center">Sus Configuraciones</h1>
 
               <ListErrors errors={this.props.errors} />
@@ -186,6 +189,9 @@ class Settings extends React.Component {
               >
                 Cerrar Sesión
               </button>
+            </div>
+            <div className="col-sm-4">
+              <h1>Users list</h1>
             </div>
           </div>
         </div>

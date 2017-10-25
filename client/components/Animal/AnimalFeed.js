@@ -13,7 +13,10 @@ const AnimalFeed = props => {
     return <div className="animal-preview"> Aún no hay animales </div>;
   }
 
-  // const canEdit = this.props.currentUser && this.props.currentUser.firstName === this.props.animals[0].createdBy.firstName
+  // const canEdit =
+  //   this.props.currentUser &&
+  //   this.props.currentUser.firstName ===
+  //     this.props.animals[0].createdBy.firstName;
 
   return (
     <div>
