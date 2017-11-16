@@ -190,9 +190,6 @@ class Settings extends React.Component {
                 Cerrar Sesión
               </button>
             </div>
-            <div className="col-sm-4">
-              <h1>Users list</h1>
-            </div>
           </div>
         </div>
       </div>
