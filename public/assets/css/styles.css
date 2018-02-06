@@ -48,7 +48,7 @@ h6 {
   -moz-background-size: cover;
   -o-background-size: cover; */
   background-size: contain;
-  height: 100vh;
+  height: 125vh;
   /*margin: auto -30px auto -30px;*/
 }
 
