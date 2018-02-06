@@ -8,13 +8,8 @@
     "node": "8.1.2"
   },
   "nyc": {
-    "require": [
-      "babel-register"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ],
+    "require": ["babel-register"],
+    "reporter": ["lcov", "text"],
     "sourceMap": false,
     "instrument": false
   },
@@ -22,12 +17,14 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./server.js",
-    "test": "istanbul cover --include-all-sources --report lcov -- _mocha test/**/*.test.js -R spec  --compilers js:babel-core/register",
+    "test":
+      "istanbul cover --include-all-sources --report lcov -- _mocha test/**/*.test.js -R spec  --compilers js:babel-core/register",
     "coverage": "bin/coverage.sh",
-    "coveralls": "npm run test -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "coveralls":
+      "npm run test -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "dev-server": "nodemon ./server.js",
     "dev": "webpack -w",
-    "heroku-postbuild": "npm install --only=dev && webpack -p --progress"
+    "heroku-postbuild": "npm install && webpack -p --progress"
   },
   "repository": {
     "type": "git",
