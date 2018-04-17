@@ -12,7 +12,7 @@ h6 {
   font-family: 'Roboto', sans-serif;
 }
 
-.gallery-img img {
+#gallery-img img {
   -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.75);
@@ -57,6 +57,10 @@ h6 {
 #about-us {
   width: 100%;
   font-size: 1.2em;
+}
+
+#about-header h1 {
+  text-align: center;
 }
 
 #gg-map {

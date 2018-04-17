@@ -3,10 +3,14 @@ import React from 'react';
 class About extends React.Component {
   render() {
     return (
-      <div id="about-us" className="row">
-        <div className="container-fluid">
-          <div id="about-text" className="col-md-6">
-            <h1>Acerca De</h1>
+      <div className="container-fluid">
+        <div className="row" id="about-header">
+          <h1>Acerca De</h1>
+          <div className="col-sm-4" id="gallery-img">
+            <img src="assets/images/donor.jpg" />
+            <img src="assets/images/poorpup.jpg" />
+          </div>
+          <div id="about-text" className="col-sm-8">
             <p>
               Todos los días, mascotas como los suyos necesitan transfusiones de
               sangre. Para muchos procedimientos, una transfusión es necesaria,
@@ -19,16 +23,6 @@ class About extends React.Component {
               veterinario.
             </p>
 
-            <hr />
-
-            <div className="row">
-              <div className="gallery-img">
-                <img src="assets/images/donor.jpg" />
-                <img src="assets/images/poorpup.jpg" />
-              </div>
-            </div>
-
-            <hr />
             <p>
               <strong>Twitter:</strong>
               @ColitasSonrient
