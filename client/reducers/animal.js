@@ -7,7 +7,6 @@ export default (state = {}, action) => {
         ...state,
         animals: action.payload.animals,
         searchTerm: ''
-        // searchSubmit: ''
       };
       break;
     case 'ANIMAL_PAGE_UNLOADED':

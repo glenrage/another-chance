@@ -39,20 +39,4 @@ class Search extends React.Component {
   }
 }
 
-// export default Search;
-
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
-
-// <div className="form-group">
-// <select
-//   className="form-control"
-//   name="properties"
-//   onChange={this.changeSearch}>
-//
-//   <option value="name">by Name</option>
-//   <option value="type">by Type</option>
-//   <option value="breed">by Breed</option>
-//   <option value="bloodType">by Blood Type</option>
-//   <option value="location">by Location</option>
-// </select>
-// </div>

@@ -58,14 +58,6 @@ class AnimalForm extends React.Component {
     };
   }
 
-  /**
- * React-router has an interesting quirk: if two routes have the
- * same component, react-router will reuse the component when
- * switching between the two. So if '/editor' and '/editor/slug'
- * both use the 'Editor' component, react-router won't recreate
- * the Editor component if you navigate to '/editor' from '/editor/slug'.
- * To work around this, we need the `componentWillReceiveProps()` hook.
- */
   componentWillReceiveProps(nextProps) {
     if (this.props.params.slug !== nextProps.params.slug) {
       if (nextProps.params.slug) {
