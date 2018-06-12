@@ -40,6 +40,7 @@
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.5.1",
     "body-parser": "1.17.2",
+    "compression-webpack-plugin": "^1.1.11",
     "cors": "2.8.4",
     "dotenv": "^4.0.0",
     "ejs": "2.5.7",
