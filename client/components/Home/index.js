@@ -17,13 +17,10 @@ const mapDispatchToProps = dispatch => ({
 //each function that mapDispatchToProps returns gets attached to components props.
 
 class Home extends React.Component {
-  //Life cycle hook that gets called when component is created. This function is invoked immediately before component is rendered, ideal for AJAX requests
-
   render() {
     return (
-      <div className="container-fluid">
-        <Banner appName={this.props.appName} />
-
+      <div className="container-fluid" id="main-container">
+        <Banner />
         <About />
       </div>
     );
