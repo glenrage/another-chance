@@ -2,8 +2,6 @@ import React from 'react';
 import AnimalEdit from './AnimalEdit';
 
 const AnimalFeed = props => {
-  console.log(props);
-
   const animals = props.animal;
   if (!props.animal) {
     return <div className="animal-preview"> Cargando </div>;
@@ -12,11 +10,6 @@ const AnimalFeed = props => {
   if (props.animal.length === 0) {
     return <div className="animal-preview"> Aún no hay animales </div>;
   }
-
-  // const canEdit =
-  //   this.props.currentUser &&
-  //   this.props.currentUser.firstName ===
-  //     this.props.animals[0].createdBy.firstName;
 
   return (
     <div>

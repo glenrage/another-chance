@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const passport = require('passport');
 const mongoose = require('mongoose');
 const Animal = mongoose.model('Animal');
 const User = mongoose.model('User');

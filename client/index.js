@@ -22,7 +22,6 @@ function hashLinkScroll() {
   }
 }
 
-//Provider makes the store available to all container components in the app without passing it explicitly. Only required to render once.
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory} onUpdate={hashLinkScroll}>

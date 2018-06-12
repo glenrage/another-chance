@@ -43,13 +43,13 @@ h6 {
 }
 
 #banner {
-  background: url(./../images/newsplash2.jpg) no-repeat;
-  /* -webkit-background-size: cover;
+  background: url(./../images/newsplash.jpg) no-repeat;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover; */
-  background-size: contain;
-  height: 125vh;
-  /*margin: auto -30px auto -30px;*/
+  -o-background-size: cover;
+  background-size: cover;
+  height: 110vh;
+  width: 100%;
 }
 
 /*About Us*/
@@ -70,6 +70,8 @@ h6 {
 
 .animal-page {
   margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .animal-form-page {
