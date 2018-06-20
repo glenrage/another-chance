@@ -8,6 +8,7 @@ const cors = require('cors');
 const passport = require('passport');
 const errorhandler = require('errorhandler');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 
 require('dotenv').load();
 
@@ -19,7 +20,7 @@ const app = express();
 app.use(cors());
 
 // Normal express config defaults
-app.use(require('morgan')('dev'));
+app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -92,5 +93,5 @@ app.use(function(err, req, res, next) {
 
 //Start server
 const server = app.listen(process.env.PORT || 3000, function() {
-  console.log('Listening on port ' + server.address().port);
+  console.log('Server Up!Listening on port ' + server.address().port);
 });

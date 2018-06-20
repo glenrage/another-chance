@@ -1,0 +1,56 @@
+version: '3.6'
+
+services:
+  web1:
+    build: ./
+    ports:
+      - 3000
+  web2:
+    build: ./
+    ports:
+      - 3000
+  web3:
+    build: ./
+    ports:
+      - 3000
+  load-balancer:
+    build: nginx/
+    ports:
+      - 80:80
+    links:
+      - web1
+      - web2
+      - web3
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - another-chance-api
+  another-chance-api:
+    container_name: api
+    image: node:10.4.1
+    build: ./
+    command: npm start
+    working_dir: /usr/src/another-chance-api
+    environment:
+      SECRET: DONAR
+      NODE_ENV: PRODUCTION
+      MONGODB_URI: mmongodb://heroku_bsppmz7c:52thbb5jbnhfsbkpsp9thigr2@ds051848.mlab.com:51848/heroku_bsppmz7c
+      PORT: 3000
+    links:
+      - mongodb
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/another-chance-api
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
